@@ -1,0 +1,127 @@
+/*	--------------------------------------------------
+
+	Fractionalize.CSS
+	A css framework that lets you setup many different
+	fractional grid layouts quickly and easily.
+	
+	WHY?
+	Grab just about any other framework and try this:
+	Create a layout using four equal colums.
+	Create a second layout using five equal columns.
+	Oops -- any "traditional" grid framework has either
+	and odd or even number of total columns, meaning that while
+	you're using that framework you can either divide the page
+	equally into odd increments, or even increments, but not
+	both.
+	
+	That's lame. Hence, this framework isn't about using a
+	fancy schmancy generator and agonizing over how many
+	columns you should ask it for, it's about being able
+	to quickly and easily divide the page into whatever
+	fractions you want at any time.
+	
+	Inspired by Blueprint CSS, and based on Blueprint
+	terminology and use.
+
+	SASSY
+	Originally a pure CSS framework, this has now been
+	converted to leverage the power of SASS to make it
+	even better.
+	http://www.sass-lang.com
+	
+	--------------------------------------------------	*/
+
+// LAYOUT DEFAULTS
+// Make sure the body always fills the page.
+* {	margin: 0; }
+html, body { height: 100%; }
+
+$desktop: 1000px;
+$tablet: 760px;
+$mobile: 280px;
+$margin: 20px;
+
+@mixin respond-to($media) {
+	@if $media == tablet {
+		@media screen and (device-width: 768px), screen and (min-width: 768px) and (max-width: 1023px) { @content; }
+	}
+	@else if $media == mobile {
+		@media screen and (device-width: 480px), screen and (max-width: 767px) { @content; }
+	}
+}
+
+@mixin container {
+	width: $desktop;
+	@if $responsive {
+		@include respond-to(tablet) { width: $tablet; }
+		@include respond-to(mobile) { width: $mobile; }
+	}
+	margin: 0 auto;
+	clear: both;
+	@include clearfix;
+}
+
+@function col_size( $denom, $width: $desktop ) {
+	@if $width < $tablet {
+		@return double_columns( $denom, $width )
+	}
+	@else {
+		@return regular_columns( $denom, $width )
+	}
+}
+
+@function regular_columns( $denom, $width: $desktop ) {
+		$gutters: $denom - 1;
+		$total_gutter: $gutters * $margin;
+		$column_area: $width - $total_gutter;
+		@return $column_area / $denom;
+}
+
+@function double_columns( $denom, $width: $landscape ) {
+		$double: $denom / 2;
+		$gutters: $double * 2;
+		$total_gutter: $gutters * $margin;
+		$column_area: $width - $total_gutter;
+		@return $column_area / $double;
+}
+
+
+@function col_span( $num, $denom, $width: $desktop ) {
+	$column_size: col_size( $denom, $width );
+	$column_area: $column_size * $num;
+	$interior_margins: ($num - 1) * $margin;
+	@return $column_area + $interior_margins;
+}
+
+@mixin grid( $num, $denom ) {
+	display: block;
+	float: left;
+	margin-left: $margin;
+	width: col_span( $num, $denom );
+	&:first-child { margin-left: 0; }
+	@if $responsive {
+		@include respond-to(tablet) { width: col_span( $num, $denom, $tablet ); }
+		@include respond-to(mobile) { width: $mobile; margin-left: 0; }
+	}
+	img { max-width: 100%; }
+}
+
+@mixin prepend( $num, $denom ) {
+	margin-left: col_span( $num, $denom ) + $margin;
+	&:first-child { margin-left: col_span( $num, $denom ) + $margin; }
+}
+
+@mixin append( $num, $denom ) {
+	margin-right: col_span( $num, $denom ) + $margin;
+	&:first-child { margin-right: col_span( $num, $denom ) + $margin; }
+}
+
+@mixin col_border( $thickness: 1px, $style: solid, $color: #CCC ) {
+	$half: $margin / 2;
+	$padding: $half - $thickness;
+	padding-left: $padding;
+	margin-left: $half;
+	border-left: $thickness $style $color;
+}
+
+div.container { @include container; }

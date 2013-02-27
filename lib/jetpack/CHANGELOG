@@ -1,0 +1,118 @@
+Changelog:
+0.8.0:
+- Significant overhaul to styles:
+  The goal of Jetpack is to be a bootstrap that helps without hurting,
+  meaning it never gets in your way with styles you have to override.
+  While existing versions have done a pretty good job of this, there are
+  still a number of "built-in" styles that get included when you use
+  different components. That's not the best. This release removes all
+  'default' styles and makes sure everything is a mixin or a reset that you
+  include by choice, not by default. Note that this means the Normalize
+  module and Typography module are treated as big mixins too, you either include
+  them or you don't.
+
+0.7.0:
+- Added `nav_link_to` helper for creating navigation links.
+- Added `viewing?` helper to match for view names.
+- Added `$responsive` flag to toggle responsive grid throughout an application.
+- Changed Fractionalize to use `respond-to` mixin.
+- Adjusted typography settings to make H1s not so crazy.
+0.6.4:
+- Fixed an accidental regression in 0.6.3.
+- Added `respond-to` mixin.
+0.6.3:
+- Adjusted fractionalize to use 'device' width instead of 'width' in media queries.
+0.6.2:
+- Adjusted resetize style of disabled elements.
+- Added definition of disabled elements to forms stylesheet and matched to link button styles.
+0.6.1:
+- Added image max-width to grid containers so images will automatically downscale as needed.
+
+0.6.0:
+- Tweaked default button style to vertical-align: baseline, and adjusted
+  the style of the inline_submit mixin so now submit buttons mixed inline will line up next to regular buttons correctly.
+- Removed form_button mixin as it no longer served a purpose (see above).
+- Adjusted typography to allow setting "base font" application-wide
+- Added title helper method.
+
+0.5.1:
+- Updated gemspec and gitignore.
+
+0.5.0:
+- Added Flash Message helper to standardize display of flash messages.
+- Changed flash message default styles to fit new flash message handler.
+- Changed heading mixins to not use line-height for whitespace since that breaks strangely on responsive layout.
+- Added `view_name` helper method for semantic CSS namespacing.
+
+0.4.3:
+- Changed Heading styles to default to 'inherit' instead of a specific color.
+- Tiny adjustment to button styles to make them line up better.
+- Added description to gemspec.
+
+0.4.2:
+- Typo correction... pushed 0.4.1 too soon!
+
+0.4.1:
+- Changed Typography module as follows:
+  > Created mixins for headings instead of definitions.
+  > For backward compatibility I also updated the default definitions to use the new mixins.
++ Note: This is the direction the library is going to go: Mixins > Definitions. My
+  eventual goal is to get most or even all of the defitions extracted to their own seperate
+  module so users have the option of only including the mixins they want without any other
+  styles getting in the way.
+
+0.4.0:
+- Major upgrade to Fractionalize module, with the following results:
+  > Standard containers are now 1000px wide instead of 960.
+  > The layout now uses media queries to respond to three different dimensions:
+    - Desktop (More than 1023px wide)
+    - Tablet (From 768 to 1023px wide)
+    - Mobile (Less than 768px wide)
+    The tablet version is just a slightly compressed layout. The mobile version becomes
+    one-column.
+  > Margins are now fixed at 20px throughout, instead of variable based on the number of columns.
+- Corrected Sass Gem dependency to use any version after 3.1.x.
+
+0.3.2:
+- Made input widths more intuitive in stacked forms
+- Adjusted style so hint spans in forms do not have to be contained in an input div.
+
+0.3.1:
+- Fix for check box and radio button definitions, plus supporting simple_form by default.
+- Minor fix on table styles and active button styles.
+
+0.3.0:
+- Added Kaminari-style pagination.
+- Added simple_form style collection check and radio label styles.
+
+0.2.2:
+- I disagree with Twitter Boostrap (the main inspiration for the typography styles). List
+	items should definitely not be gray by default. <li>'s will now inherit their color.
+
+0.2.1:
+- Another minor tweak to danger button style.
+
+0.2.0:
+- Moved to semantic versioning as described at http://semver.org
+  ( Version 0.1.4 actually added new features and therefore should have been version 0.2 )
+- Tweaked danger button style for greater readability
+
+0.1.4:
+- Updated readme.
+- Fixed password field definition.
+- Added form_button and inline_submit mixins.
+- Added box-shadow to form buttons to match anchor buttons.
+
+0.1.3:
+- Added `standard_input` mixin for one-off situations.
+- Added definition for password inputs.
+
+0.1.2:
+- Added small button style.
+
+0.1.1:
+- Added Changelog.
+- Added default styles for date/time select fields.
+
+0.1.0:
+- Initial Commit
