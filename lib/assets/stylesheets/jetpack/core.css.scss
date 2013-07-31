@@ -2,6 +2,9 @@
 @mixin clearfix { &:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; overflow:hidden; } }
 
 @mixin respond-to($media) {
+	@if $media == desktop {
+		@media screen and (min-width: 1024px) { @content; }
+	}
 	@if $media == tablet {
 		@media screen and (device-width: 768px), screen and (min-width: 768px) and (max-width: 1023px) { @content; }
 	}

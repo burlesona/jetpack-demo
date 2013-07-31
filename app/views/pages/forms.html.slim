@@ -2,17 +2,18 @@ h1 Form Page! Woo.
 
 p
   | This example form uses a real ActiveRecord model with pretty
-  | much every kind of field you can have. The markup is the default
-  | from simple_form.
+    much every kind of field you can have. The markup is the default
+    from simple_form.
 
 - @sample = Sample.find(1)
+- @sample.errors.add :description, "Here is an error message."
 
-= simple_form_for @sample do |f|
-  = f.input :name
+= simple_form_for @sample, :html => {:class => 'standard'} do |f|
+  = f.input :name, :hint => "Hints are built-in."
   = f.input :value
   = f.input :enabled
   = f.input :description
-  = f.input :email
+  = f.input :email, :placeholder => "we-can-do@placeholders.com"
   = f.input :url
   = f.input :phone
   = f.input :password
@@ -23,4 +24,5 @@ p
   = f.association :user
   = f.association :widgets
   = f.association :companies, :as => :check_boxes
-  = f.submit
+  = f.association :companies, :as => :radio_buttons, :label => "Rival"
+  .submit= f.submit

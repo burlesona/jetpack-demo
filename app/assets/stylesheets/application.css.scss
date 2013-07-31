@@ -12,7 +12,9 @@ div.sample {
   div.content { @include grid(3,4); }
 }
 
-// Grid Samples
+// PAGES
+
+// HOME
 div.grid_sample {
   @include container;
   .column {
@@ -28,3 +30,6 @@ div.grid_sample {
   .one-eight { @include grid(1, 8); }
   .one-ten   { @include grid(1,10); }
 }
+
+// FORMS
+form.standard { @include form-horizontal-responsive; }

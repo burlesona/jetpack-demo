@@ -1,5 +1,20 @@
+TODO: V0.8
+> Change typography module to be all mixins
+> Redo fractionalize to have fluid/fluid-responsive, fixed/fixed-responsive grids.
+> Comb through the rest of the codebase and make sure that defaults aren't being
+  set except in the Reset lib, and an optional "defaults" file
+
+TODO: V0.9
+> Clear out any remaining ideas from Wunderlist
+> Review the JS
+
+TODO: V1.0
+> Use git submodules, so style is available apart from plugin
+> Finish sexy docs / demo
+
+
 Changelog:
-0.8.0:
+**IN PROGRESS 0.8.0:
 - Significant overhaul to styles:
   The goal of Jetpack is to be a bootstrap that helps without hurting,
   meaning it never gets in your way with styles you have to override.
@@ -7,7 +22,7 @@ Changelog:
   still a number of "built-in" styles that get included when you use
   different components. That's not the best. This release removes all
   'default' styles and makes sure everything is a mixin or a reset that you
-  include by choice, not by default. Note that this means the Normalize
+  include by choice, not by default. Note that this means the Resetize
   module and Typography module are treated as big mixins too, you either include
   them or you don't.
 - Refined header styles to make them procedural based on base font size.
@@ -15,8 +30,12 @@ Changelog:
 - Removed `font` mixin
 - Removed `opacity`, `transition`, and `background-clip` mixins
 - Moved `respond-to` mixin to core.
+- Added `desktop` option for respond_to
 - Refined typographic styles.
-- Updated Resetize Library to use newer version of Normalize.css
+- Updated Resetize to use more recent bits from Normalize.css
+- Completely redid the Forms module to be all mixins
+
+
 
 
 0.7.0:
