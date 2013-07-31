@@ -1,1 +1,26 @@
 h1 Form Page! Woo.
+
+p
+  | This example form uses a real ActiveRecord model with pretty
+  | much every kind of field you can have. The markup is the default
+  | from simple_form.
+
+- @sample = Sample.find(1)
+
+= simple_form_for @sample do |f|
+  = f.input :name
+  = f.input :value
+  = f.input :enabled
+  = f.input :description
+  = f.input :email
+  = f.input :url
+  = f.input :phone
+  = f.input :password
+  = f.input :time_zone
+  = f.input :the_date
+  = f.input :the_time
+  = f.input :the_datetime
+  = f.association :user
+  = f.association :widgets
+  = f.association :companies, :as => :check_boxes
+  = f.submit
