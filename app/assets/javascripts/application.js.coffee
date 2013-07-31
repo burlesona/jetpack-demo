@@ -1,7 +1,6 @@
 #  APPLICATION MANIFEST
 #= require jquery
 #= require jquery_ujs
+#= require jetpack
 #= require_tree .
 
-# LATER FIX JETPACK JS FUNCTIONS
-# require jetpack

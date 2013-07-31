@@ -1,7 +1,7 @@
-/* Twitter Typography +
- * Inspired by Twitter Bootstrap v1.3,
- * with customizations and adaptations to make it more "sassy",
- * and adjustments for personal taste.
+/* Typography
+ * Inspired by Twitter Bootstrap v1.3, trimmed down and
+ * tweaked to make it a little better as a starting-point
+ * ready to be styled over, rather than a destination unto itself.
  * ---------------------------------------------------------------------------------------- */
 
 // BODY TEXT
@@ -13,24 +13,24 @@ p {
 
 // HEADING MIXINS
 @mixin heading( $level ) {
-	font-weight: 700; color: inherit; line-height: 1.2; margin-bottom: $baseline / 2;
+	font-weight: 700; color: inherit; line-height: 1.1; margin: $baseline 0 $baseline/4;
 	small { color: $light2; }
 	@if $level == 1 {
-		font-size: 24px;
-		small { font-size: 16px; font-weight: 500; }
+		font-size: $base_size * 1.8;
+		small { font-size: $base_size *1.4; font-weight: 500; }
 	} @else if $level == 2 {
-		font-size: 20px;
-		small { font-size: 14px; font-weight: 500; }
+		font-size: $base_size *1.6;
+		small { font-size: $base_size *1.2; font-weight: 500; }
 	} @else if $level == 3 {
-		font-size: 18px;
-		small { font-size: 14px; font-weight: 500; }
+		font-size: $base_size *1.4;
+		small { font-size: $base_size *1.1; font-weight: 500; }
 	} @else if $level == 4 {
-		font-size: 16px;
-		small { font-size: 12px; font-weight: 500; }
+		font-size: $base_size *1.2;
+		small { font-size: $base_size; font-weight: 500; }
 	} @else if $level == 5 {
-		font-size: 14px;
+		font-size: $base_size;
 	} @else {
-		font-size: 13px; color: $light2; text-transform: uppercase;
+		font-size: $base_size; color: $light2; text-transform: uppercase;
 	}
 }
 
@@ -43,11 +43,9 @@ h5 { @include heading(5); }
 h6 { @include heading(6); }
 
 // LISTS
-ol { margin: 0 0 $baseline 20px; }
-ul { margin: 0 0 $baseline 15px; }
+ol { margin: $baseline/2 0; list-style: decimal; padding: 0 0 0 20px; }
+ul { margin: $baseline/2 0; list-style: square; padding: 0 0 0 15px; }
 ul ul, ul ol, ol ol, ol ul { margin-bottom: 0; }
-ul { list-style: disc; }
-ol { list-style: decimal; }
 li { line-height: $baseline; color: inherit; }
 ul.unstyled { list-style: none; margin-left: 0; }
 
@@ -59,18 +57,22 @@ dl {
 	dd { margin-left: $baseline / 2; }
 }
 
+// ADDRESSES
+address {
+	display: block; line-height: $baseline; margin-bottom: $baseline;
+	white-space: pre; white-space: pre-wrap; word-wrap: break-word;
+}
+
+// EMPHASIS
+strong { font-style: inherit; font-weight: 700; }
+em { font-style: italic; font-weight: inherit; line-height: inherit; }
+
 // HORIZONTAL RULES
 hr {
 	margin: 20px 0 19px;
 	border: 0;
 	border-bottom: 1px solid #eee;
 }
-
-// EMPHASIS
-strong { font-style: inherit; font-weight: 700; }
-em { font-style: italic; font-weight: inherit; line-height: inherit; }
-.muted { color: $light2; }
-
 // QUOTES
 blockquote {
 	margin-bottom: $baseline; border-left: 5px solid $light2; padding-left: 15px;
@@ -80,9 +82,6 @@ blockquote {
 		&:before { content: '\2014 \00A0'; }
 	}
 }
-
-// ADDRESSES
-address { display: block; line-height: $baseline; margin-bottom: $baseline; }
 
 // CODE
 code, pre { padding: 0 3px 2px;	font-family: $mono; font-size: 12px; background-color: $light1; }

@@ -10,6 +10,12 @@ Changelog:
   include by choice, not by default. Note that this means the Normalize
   module and Typography module are treated as big mixins too, you either include
   them or you don't.
+- Refined header styles to make them procedural based on base font size.
+- Renamed `mixins` module as `core`, to indicate that it's required
+- Moved `respond-to` mixin to core.
+- Refined typographic styles.
+- Updated Resetize Library to use newer version of Normalize.css
+
 
 0.7.0:
 - Added `nav_link_to` helper for creating navigation links.

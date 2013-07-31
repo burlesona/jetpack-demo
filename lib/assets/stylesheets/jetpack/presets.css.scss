@@ -1,3 +1,4 @@
+// TODO - Add full comments here
 // COLOR DEFINITIONS
 $light1: #EAEBEC;
 $light2: #9A9FA0;
@@ -29,7 +30,13 @@ $serif: "Georgia", "Times", "Times New Roman", serif;
 $mono: "Monaco", "Andale Mono", "Courier New", monospace;
 
 $base_font: $sans;
-$base_size: 13px;
+$base_size: 15px;
 $base_weight: 400;
-$baseline: 18px;
+$baseline: 20px;
+
+// LAYOUT DEFAULTS
 $responsive: true;
+$desktop: 1000px;
+$tablet: 760px;
+$mobile: 280px;
+$margin: 20px;

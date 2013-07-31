@@ -1,4 +1,4 @@
-h1 Jetpack Demo
+h1 Jetpack
 p A modern, modular bootstrap that helps without hurting.
 
 h2 Philosophy
@@ -7,3 +7,284 @@ ul
   li Responsive
   li Modular
   li Graceful Degradation
+
+h2 Why?!?
+p
+  | Twitter Bootstrap is really neat. But you know what? It's also
+    really opinionated. This is fine, unless you're really opinionated
+    in a different direction. <em>Amirite?</em>
+    Jetpack assumes that you're making great web applications and that
+    you're pretty competent. It will help you work faster by doing a lot
+    of boilerplate stuff for you, and beyond that you're on your own, champ.
+
+p
+  | In the end, there's no such thing as a perfect bootstrap. This one
+    is pretty good, and if you disagree with part of it, you can painlessly
+    kick that part of it to the curb.
+
+p
+  ' <em>One more thing...</em> Everyone is using Twitter Bootstrap these days.
+    It's so ubiquitous
+  a href="https://wrapbootstrap.com/" there
+  '
+  a href="http://bootswatch.com/" are
+  '
+  a href="http://portnine.com/bootstrap-themes" a
+  '
+  a href="http://themeforest.net/search?utf8=%E2%9C%93&order_by=relevance&term=bootstrap+templates" bajillion
+  '
+  a href="http://www.boottheme.com/" [censored]
+  '
+  a href="http://www.templatemonster.com/properties/features/bootstrap-templates/" theme
+  '
+  a href="http://jumpstartui.com/" sites
+  '
+  ' for it so you won't look exactly like everyone else.
+    Why mess with that crap? Just use something a little lighter (and a
+    little different) and <strong>write some of your own CSS</strong> (ffs).
+
+h2 Documentation
+
+h3 Usage
+p
+  | Add detailed installation instructions here.
+
+h3 Modules
+p
+  | Jetpack is intended to be modular. All dependencies are included in the core
+    module, everything else is totally independent and can be added or removed
+    at any time.
+
+h3 Presets <small>optional</small>
+code @import 'jetpack/presets';
+p
+  | Jetpack Presets includes default definitions for all the variables
+    used in Jetpack. The recommended use is to copy the presets (you can
+    use the ones below or copy directly from source) and insert them above
+    any jetpack style modules you include. This way all your application-wide
+    variables are set at the top of your stylesheet stack.
+
+pre
+  |
+    // TODO - Add full comments here
+    // COLOR DEFINITIONS
+    $light1: #EAEBEC;
+    $light2: #9A9FA0;
+
+    $dark1: #3C3E40;
+    $dark2: #262728;
+
+    $color1: #F4B84D;
+    $color2: #E59013;
+
+    $alt1: #4E7DF2;
+    $alt2: #2C4A84;
+
+    $success1: #D7EDC3;
+    $success2: #68AF2F;
+
+    $notice1: #FFFD7D;
+    $notice2: #FFD939;
+
+    $error1: #FFDCDC;
+    $error2: #D64338;
+
+    $white: #FFFFFF;
+    $black: #000000;
+
+    // TYPOGRAPHY DEFINITIONS
+    $sans: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    $serif: "Georgia", "Times", "Times New Roman", serif;
+    $mono: "Monaco", "Andale Mono", "Courier New", monospace;
+
+    $base_font: $sans;
+    $base_size: 13px;
+    $base_weight: 400;
+    $baseline: 18px;
+    $responsive: true;
+
+
+h3 Core <small>required</small>
+code @import 'jetpack/core';
+p
+  | Jetpack Core is the only required module. It includes basic utility
+    mixins that the other modules rely on.
+
+h4 Components
+ul.components
+  li Clearfix
+  li Respond-To
+  li Border Radius
+  li Box Shadow
+  li Font
+  li Gradient
+  li Buttonize
+
+p Note, several things to deprecate here.
+
+h3 Resetize <small>optional</small>
+code @import 'jetpack/resetize';
+p
+  | Jetpack Resetize is a mashup of Normalize and Formalize, with a
+    few little tweaks thrown in for good measure. To my knowledge, these
+    are the best reset libraries out there. The code is long, but thoroughly
+    commented, so check that out if you want to see exactly what's set.
+
+h3 Fractionalize
+code @import 'jetpack/fractionalize';
+p
+  | Fractionalize is Jetpack's uber-badass grid system. It's not the typical
+    span-something grid you're used to - instead, it's a method for dividing
+    the page into fractional columns that reliably flow without any special
+    markup or other shenanigans.
+
+h4 Sample <small>try resizing!</small>
+.grid_sample
+  .row
+    .column.one-one 1/1
+  .row
+    .column.one-two 1/2
+    .column.one-two 1/2
+  .row
+    .column.one-three 1/3
+    .column.one-three 1/3
+    .column.one-three 1/3
+  .row
+    .column.one-four 1/4
+    .column.one-four 1/4
+    .column.one-four 1/4
+    .column.one-four 1/4
+  .row
+    .column.one-five 1/5
+    .column.one-five 1/5
+    .column.one-five 1/5
+    .column.one-five 1/5
+    .column.one-five 1/5
+  .row
+    .column.one-six 1/6
+    .column.one-six 1/6
+    .column.one-six 1/6
+    .column.one-six 1/6
+    .column.one-six 1/6
+    .column.one-six 1/6
+  .row
+    .column.one-eight 1/8
+    .column.one-eight 1/8
+    .column.one-eight 1/8
+    .column.one-eight 1/8
+    .column.one-eight 1/8
+    .column.one-eight 1/8
+    .column.one-eight 1/8
+    .column.one-eight 1/8
+  .row
+    .column.one-ten 1/10
+    .column.one-ten 1/10
+    .column.one-ten 1/10
+    .column.one-ten 1/10
+    .column.one-ten 1/10
+    .column.one-ten 1/10
+    .column.one-ten 1/10
+    .column.one-ten 1/10
+    .column.one-ten 1/10
+    .column.one-ten 1/10
+
+h3 Typography
+code @import 'jetpack/typography';
+p
+  | Jetpack Typography is a remix of the Typographic styles from Twitter
+    Bootstrap. Among other things, I've toned down the size of the headings
+    (geez!) and increased the color contrast.
+
+h4 Samples
+.sample
+  .label Headings
+  .content
+    h1 Heading 1
+    h2 Heading 2
+    h3 Heading 3
+    h4 Heading 4
+    h5 Heading 5
+    h6 Heading 6
+
+.sample
+  .label Lists
+  .content
+    ul
+      li Unordered List
+      li Unordered List
+      li Unordered List
+    ol
+      li Ordered List 1
+      li Ordered List 2
+      li Ordered List 3
+    dl
+      dt Description List
+      dd And the stuff it's describing
+      dt Something else
+      dd You know, it's interesting that these aren't normally nested.
+      dt To be honest
+      dd
+        | I would have expected each <code>dt</code> and <code>dd</code>
+          to be enclosed in a <code>di</code> or something, but nope!
+.sample
+  .label Addresses
+  .content
+    address
+      | Address Addressly
+        123 Foo Bar St.
+        Someburg, PA 18246
+
+.sample
+  .label Emphasis
+  .content
+    p
+      strong Strong
+    p
+      em Em
+
+.sample
+  .label Page Flow
+  .content
+    p Horizontal Rules
+    hr
+    blockquote
+      | Super duper blockquotes.
+      <small>With small text</small>
+
+.sample
+  .label Code / Preformatted Text
+  .content
+    code= '<code>Inline Code</code>'
+    pre
+      | Preformatted text, or big blocks of code. These
+        are all over this page so I'm not going to worry
+        about making this one especially big.
+
+h3 Tables
+code @import 'jetpack/tables';
+p
+  | Jetpack Tables are a based on a remix of the table styles in
+    Twitter Bootstrap. Simple, straightforward. Use 'em if you like.
+
+h3 Forms
+code @import 'jetpack/forms';
+p
+  | Jetpack includes a collection of different form layout mixins. The
+    base styles for form elements are mostly set in the Resetize library,
+    so if you're not using that the individual form elements will retain
+    their default OS / Browser appearance. Element-level styles used in
+    the Jetpack Forms mixins do not strictly depend on the Resetize library,
+    but they probably will look better if you're using that (or something
+    else that standardizes form element styles across browsers).
+
+h3 Navigation
+code @import 'jetpack/navigation';
+p
+  | Jetpack Navigation is a set of helper styles for common nav UI
+    elements.
+
+h3 Interface
+code @import 'jetpack/interface';
+p
+  | Jetpack Interface is a set of helpers for common interface elements,
+    like labels and buttons.
