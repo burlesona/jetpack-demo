@@ -1,3 +1,3 @@
 JetpackDemo::Application.routes.draw do
-  root to: 'home#show'
+  root :to => 'high_voltage/pages#show', id: 'home'
 end

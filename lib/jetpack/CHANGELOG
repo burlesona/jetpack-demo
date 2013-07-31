@@ -12,6 +12,8 @@ Changelog:
   them or you don't.
 - Refined header styles to make them procedural based on base font size.
 - Renamed `mixins` module as `core`, to indicate that it's required
+- Removed `font` mixin
+- Removed `opacity`, `transition`, and `background-clip` mixins
 - Moved `respond-to` mixin to core.
 - Refined typographic styles.
 - Updated Resetize Library to use newer version of Normalize.css
