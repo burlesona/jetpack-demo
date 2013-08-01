@@ -43,3 +43,9 @@
 	border: 1px solid;
 	border-color: darken($primaryColor, 10%) darken($secondaryColor, 8%) darken($secondaryColor, 20%);
 }
+
+@mixin gutter( $side: top, $style: $light-line, $size: $baseline/2 ) {
+	border-#{$side}: $style;
+	margin-#{$side}: $size;
+	padding-#{$side}: $size;
+}

@@ -42,59 +42,41 @@
 	@include clearfix;
 }
 
-@function col_size( $denom, $width: $desktop ) {
-	@if $width < $tablet {
-		@return double_columns( $denom, $width )
-	}
-	@else {
-		@return regular_columns( $denom, $width )
-	}
-}
-
-@function regular_columns( $denom, $width: $desktop ) {
-		$gutters: $denom - 1;
-		$total_gutter: $gutters * $margin;
-		$column_area: $width - $total_gutter;
-		@return $column_area / $denom;
-}
-
-@function double_columns( $denom, $width: $landscape ) {
-		$double: $denom / 2;
-		$gutters: $double * 2;
-		$total_gutter: $gutters * $margin;
-		$column_area: $width - $total_gutter;
-		@return $column_area / $double;
-}
-
-
-@function col_span( $num, $denom, $width: $desktop ) {
-	$column_size: col_size( $denom, $width );
+@function col-span( $num, $denom, $width: $desktop ) {
+	$column_size: col-size( $denom, $width );
 	$column_area: $column_size * $num;
 	$interior_margins: ($num - 1) * $margin;
 	@return $column_area + $interior_margins;
+}
+
+@function col-size( $denom, $width: $desktop ) {
+	$gutters: $denom - 1;
+	$total_gutter: $gutters * $margin;
+	$column_area: $width - $total_gutter;
+	@return $column_area / $denom;
 }
 
 @mixin grid( $num, $denom ) {
 	display: block;
 	float: left;
 	margin-left: $margin;
-	width: col_span( $num, $denom );
+	width: col-span( $num, $denom );
 	&:first-child { margin-left: 0; }
 	@if $responsive {
-		@include respond-to(tablet) { width: col_span( $num, $denom, $tablet ); }
+		@include respond-to(tablet) { width: col-span( $num, $denom, $tablet ); }
 		@include respond-to(mobile) { width: $mobile; margin-left: 0; }
 	}
 	img { max-width: 100%; }
 }
 
 @mixin prepend( $num, $denom ) {
-	margin-left: col_span( $num, $denom ) + $margin;
-	&:first-child { margin-left: col_span( $num, $denom ) + $margin; }
+	margin-left: col-span( $num, $denom ) + $margin;
+	&:first-child { margin-left: col-span( $num, $denom ) + $margin; }
 }
 
 @mixin append( $num, $denom ) {
-	margin-right: col_span( $num, $denom ) + $margin;
-	&:first-child { margin-right: col_span( $num, $denom ) + $margin; }
+	margin-right: col-span( $num, $denom ) + $margin;
+	&:first-child { margin-right: col-span( $num, $denom ) + $margin; }
 }
 
 @mixin col_border( $thickness: 1px, $style: solid, $color: #CCC ) {
@@ -103,4 +85,37 @@
 	padding-left: $padding;
 	margin-left: $half;
 	border-left: $thickness $style $color;
+}
+
+// FLUID VERSION
+$fluid-margin: 1%;
+$fluid-width: 96%;
+
+@mixin fluid-container {
+	width: $fluid-width; padding: 0 (100%-$fluid-width)/2; @include clearfix;
+}
+
+@mixin fluid-grid( $num, $denom ) {
+	display: block; float: left;
+	margin-left: $fluid-margin;
+	width: fluid-col-span( $num, $denom );
+	&:first-child { margin-left: 0; }
+	@if $responsive {
+		@include respond-to(mobile) { width: 100%; margin-left: 0; }
+	}
+	img { max-width: 100%; }
+}
+
+@function fluid-col-span( $num, $denom ) {
+	$column_size: fluid-col-size( $denom );
+	$column_area: $column_size * $num;
+	$interior_margins: ($num - 1) * $fluid-margin;
+	@return $column_area + $interior_margins;
+}
+
+@function fluid-col-size( $denom ) {
+	$gutters: $denom - 1;
+	$total_gutter: $gutters * $fluid-margin;
+	$column_area: 100% - $total_gutter;
+	@return $column_area / $denom;
 }

@@ -2,9 +2,6 @@
 @import 'jetpack/presets';
 @import 'jetpack';
 
-// Defaults pulled out of jetpack
-div.container { @include container; }
-
 // General Purpose
 div.sample {
   @include container;
@@ -15,21 +12,49 @@ div.sample {
 // PAGES
 
 // HOME
-div.grid_sample {
-  @include container;
-  .column {
-    background: $light1; @include border-radius(2px); height: 20px; margin-bottom: 5px;
-    line-height: 20px; text-align: center;
+body.pages.home {
+  div.wrapper { @include container; }
+
+  div.grid_sample {
+    @include container;
+    .column {
+      background: $light1; @include border-radius(2px); height: 20px; margin-bottom: 5px;
+      line-height: 20px; text-align: center;
+    }
+    .one-one   { @include grid(1, 1); }
+    .one-two   { @include grid(1, 2); }
+    .one-three { @include grid(1, 3); }
+    .one-four  { @include grid(1, 4); }
+    .one-five  { @include grid(1, 5); }
+    .one-six   { @include grid(1, 6); }
+    .one-eight { @include grid(1, 8); }
+    .one-ten   { @include grid(1,10); }
   }
-  .one-one   { @include grid(1, 1); }
-  .one-two   { @include grid(1, 2); }
-  .one-three { @include grid(1, 3); }
-  .one-four  { @include grid(1, 4); }
-  .one-five  { @include grid(1, 5); }
-  .one-six   { @include grid(1, 6); }
-  .one-eight { @include grid(1, 8); }
-  .one-ten   { @include grid(1,10); }
 }
 
 // FORMS
-form.standard { @include form-horizontal-responsive; }
+body.pages.forms {
+  div.wrapper { @include container; }
+  form.standard { @include form-horizontal-responsive; }
+}
+
+// FRACTIONALIZE
+body.pages.fractionalize {
+  div.content { @include fluid-container; }
+  div.grid-container {
+    @include fluid-container;
+    .column {
+      background: $light1; @include border-radius(2px); height: 20px; margin-bottom: 5px;
+      line-height: 20px; text-align: center;
+    }
+    .one-one   { @include fluid-grid(1, 1); }
+    .one-two   { @include fluid-grid(1, 2); }
+    .one-three { @include fluid-grid(1, 3); }
+    .one-four  { @include fluid-grid(1, 4); }
+    .one-five  { @include fluid-grid(1, 5); }
+    .one-six   { @include fluid-grid(1, 6); }
+    .one-eight { @include fluid-grid(1, 8); }
+    .one-ten   { @include fluid-grid(1,10); }
+  }
+
+}
