@@ -56,5 +56,16 @@ body.pages.fractionalize {
     .one-eight { @include fluid-grid(1, 8); }
     .one-ten   { @include fluid-grid(1,10); }
   }
+}
 
+// TABLES
+body.pages.tables {
+  div.wrapper { @include container; }
+  table.simple { @include table-style-simple; }
+  table.shaded { @include table-style-shaded; }
+  table.shaded-blue { @include table-style-shaded(#C9D0FF); }
+  table.shaded-yellow { @include table-style-shaded(#FEE5BC); }
+  table.striped { @include table-style-striped; }
+  table.striped-blue { @include table-style-striped(#C9D0FF); }
+  table.striped-yellow { @include table-style-striped(#FEE5BC); }
 }

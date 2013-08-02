@@ -1,0 +1,240 @@
+h3 Tables
+code @import 'jetpack/tables';
+p
+  | Jetpack Tables is a simple module including some useful table style mixins.
+    As with the rest of Jetpack, you can include what you want, and ignore the the rest.
+
+h4 Basic Tables
+code @include table-style-simple;
+
+table.simple
+  caption Horizontal and Vertical Headers
+  thead
+    tr
+      th
+      th Group 1
+      th Group 2
+      th Group 3
+  tbody
+    tr
+      th Category A
+      td Item 1A
+      td Item 2A
+      td Item 3A
+    tr
+      th Category B
+      td Item 1B
+      td Item 2B
+      td Item 3B
+    tr
+      th Category C
+      td Item 1C
+      td Item 2C
+      td Item 3C
+
+table.simple
+  caption Horizontal Headers Only
+  thead
+    tr
+      th Group 1
+      th Group 2
+      th Group 3
+      th Group 4
+  tbody
+    tr
+      td Item 1A
+      td Item 2A
+      td Item 3A
+      td Item 4A
+    tr
+      td Item 1B
+      td Item 2B
+      td Item 3B
+      td Item 4B
+    tr
+      td Item 1C
+      td Item 2C
+      td Item 3C
+      td Item 4C
+
+table.simple
+  caption Vertical Headers Only
+  tbody
+    tr
+      th Category A
+      td Item 1A
+      td Item 2A
+      td Item 3A
+    tr
+      th Category B
+      td Item 1B
+      td Item 2B
+      td Item 3B
+    tr
+      th Category C
+      td Item 1C
+      td Item 2C
+      td Item 3C
+    tr
+      th Category D
+      td Item 1D
+      td Item 2D
+      td Item 3D
+
+h4 Shaded Tables
+code @include table-style-shaded;
+
+table.shaded
+  caption Horizontal and Vertical Headers
+  thead
+    tr
+      th
+      th Group 1
+      th Group 2
+      th Group 3
+  tbody
+    tr
+      th Category A
+      td Item 1A
+      td Item 2A
+      td Item 3A
+    tr
+      th Category B
+      td Item 1B
+      td Item 2B
+      td Item 3B
+    tr
+      th Category C
+      td Item 1C
+      td Item 2C
+      td Item 3C
+
+code @include table-style-shaded(#C9D0FF);
+table.shaded-blue
+  caption Horizontal Headers Only
+  thead
+    tr
+      th Group 1
+      th Group 2
+      th Group 3
+      th Group 4
+  tbody
+    tr
+      td Item 1A
+      td Item 2A
+      td Item 3A
+      td Item 4A
+    tr
+      td Item 1B
+      td Item 2B
+      td Item 3B
+      td Item 4B
+    tr
+      td Item 1C
+      td Item 2C
+      td Item 3C
+      td Item 4C
+
+code @include table-style-shaded(#FEE5BC);
+table.shaded-yellow
+  caption Vertical Headers Only
+  tbody
+    tr
+      th Category A
+      td Item 1A
+      td Item 2A
+      td Item 3A
+    tr
+      th Category B
+      td Item 1B
+      td Item 2B
+      td Item 3B
+    tr
+      th Category C
+      td Item 1C
+      td Item 2C
+      td Item 3C
+    tr
+      th Category D
+      td Item 1D
+      td Item 2D
+      td Item 3D
+
+h4 Striped Tables
+code @include 'table-style-striped';
+
+table.striped
+  caption Horizontal and Vertical Headers
+  thead
+    tr
+      th
+      th Group 1
+      th Group 2
+      th Group 3
+  tbody
+    tr
+      th Category A
+      td Item 1A
+      td Item 2A
+      td Item 3A
+    tr
+      th Category B
+      td Item 1B
+      td Item 2B
+      td Item 3B
+    tr
+      th Category C
+      td Item 1C
+      td Item 2C
+      td Item 3C
+
+code @include table-style-striped(#C9D0FF);
+table.striped-blue
+  caption Horizontal Headers Only
+  thead
+    tr
+      th Group 1
+      th Group 2
+      th Group 3
+      th Group 4
+  tbody
+    tr
+      td Item 1A
+      td Item 2A
+      td Item 3A
+      td Item 4A
+    tr
+      td Item 1B
+      td Item 2B
+      td Item 3B
+      td Item 4B
+    tr
+      td Item 1C
+      td Item 2C
+      td Item 3C
+      td Item 4C
+
+code @include table-style-striped(#FEE5BC);
+table.striped-yellow
+  caption Vertical Headers Only
+  tbody
+    tr
+      th Category A
+      td Item 1A
+      td Item 2A
+      td Item 3A
+    tr
+      th Category B
+      td Item 1B
+      td Item 2B
+      td Item 3B
+    tr
+      th Category C
+      td Item 1C
+      td Item 2C
+      td Item 3C
+    tr
+      th Category D
+      td Item 1D
+      td Item 2D
+      td Item 3D
