@@ -1,12 +1,6 @@
-TODO: V0.8.2
-> Fix gray line above div.submit in form-horizontal-responsive
-> Change form style naming pattern to match table naming pattern
-> Fix forms label so input > label:first-child is used instead of .control-label
-
 TODO: V0.9
 > Clear out any remaining ideas from Wunderlist
 > Redo Tabs, Pills, Navigation
-> Redo Tables
 > Review the JS
 
 TODO: V1.0
@@ -19,6 +13,11 @@ Changelog:
 - Changed class "alert_message" to "alert-message" in flash message helper.
   Trying to me more consistent in using hypenation in HTML/CSS, since that's
   generally more standard than snake case.
+- Add horizontal form alignment helpers in forms library
+- Change form label so it doesn't have to be .control-label if it is first-child
+- Fix gray line above div.submit in form-horizontal-responsive
+- Change form style naming pattern to match table naming pattern
+
 
 0.8.1:
 - Completely revised the tables library to be based on stack of mixins

@@ -26,3 +26,14 @@ p
   = f.association :companies, :as => :check_boxes
   = f.association :companies, :as => :radio_buttons, :label => "Rival"
   .submit= f.submit
+
+h2 Form Example with minimal markup
+form class="standard"
+  div.input
+    label Label
+    input type="text"
+  div.input
+    label Other Label
+    input type="text"
+  div.submit
+    input type="submit"
