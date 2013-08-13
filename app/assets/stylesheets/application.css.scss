@@ -35,7 +35,7 @@ body.pages.home {
 // FORMS
 body.pages.forms {
   div.wrapper { @include container; }
-  form.standard { @include form-horizontal-responsive; }
+  form.standard { @include form-style-horizontal-responsive; }
 }
 
 // FRACTIONALIZE
@@ -68,4 +68,11 @@ body.pages.tables {
   table.striped { @include table-style-striped; }
   table.striped-blue { @include table-style-striped(#C9D0FF); }
   table.striped-yellow { @include table-style-striped(#FEE5BC); }
+}
+
+// NAVIGATION
+body.pages.navigation {
+  div.wrapper { @include container; }
+  div.tab-wrapper { @include tab-style-simple; }
+  div.pill-wrapper { @include pill-style-simple; }
 }

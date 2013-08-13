@@ -4,3 +4,6 @@
 #= require jetpack
 #= require_tree .
 
+jQuery ->
+  $('ul.tabs').tabs()
+  $('ul.pills').pills()
