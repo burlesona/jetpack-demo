@@ -28,7 +28,7 @@
 		width: 100%;
 		li a {
 			border: 1px solid $light1; border-bottom: none;
-			padding: $baseline/4 $baseline/2; border-radius: 6px 6px 0 0;
+			padding: $baseline/4 $baseline/2; border-radius: $baseline/2 $baseline/2 0 0;
 			background: lighten($light1, 5%);
 			&.active { background: $white; border-bottom: 1px solid $white; margin-bottom: -1px; }
 		}
@@ -58,9 +58,20 @@
 		margin-bottom: $baseline/2;
 		li a {
 			border: 1px solid $light1; padding: $baseline/4 $baseline/2;
-			border-radius: $baseline; background: lighten($light1, 5%);
+			@include border-radius($baseline); background: lighten($light1, 5%);
 			&.active { background: $white; }
 		}
+	}
+}
+
+@mixin pagination-style-simple {
+	ul { list-style: none; margin: 0; padding: 0; font-size: $base_size - 2px; font-weight: 700; }
+	li { display: inline-block; }
+	a {
+		display: inline-block; padding: $baseline/6 $baseline/2; margin-right: $baseline/4;
+		background: lighten($light1,5%); color: $color1; text-decoration: none;
+		border: 1px solid $light1; @include border-radius($baseline/2);
+		&.current { background: $color1; border-color: $color2; color: $white; }
 	}
 }
 

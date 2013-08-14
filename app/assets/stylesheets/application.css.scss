@@ -75,4 +75,5 @@ body.pages.navigation {
   div.wrapper { @include container; }
   div.tab-wrapper { @include tab-style-simple; }
   div.pill-wrapper { @include pill-style-simple; }
+  nav.pagination.simple { @include pagination-style-simple; }
 }
