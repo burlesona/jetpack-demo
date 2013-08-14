@@ -31,7 +31,7 @@ h4 Pills
     #pill3
       p This is Pill 3
 
-h4 Pagination
+h4 Pagination - Simple
 nav.pagination.simple
   ul
     li= link_to '1', '#', :class => 'current'
@@ -39,3 +39,7 @@ nav.pagination.simple
     li= link_to '3', '#'
     li= link_to '4', '#'
     li= link_to '5', '#'
+
+h4 Pagination - Kaminari Style
+- page_data = Kaminari.paginate_array((0..50).to_a).page(params[:page]).per(10)
+= paginate page_data

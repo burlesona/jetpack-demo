@@ -32,6 +32,29 @@ body.pages.home {
   }
 }
 
+// PRESETS
+body.pages.presets {
+  div.wrapper { @include container; }
+
+  div.row { @include container; }
+  div.color { @include grid(1,4); }
+  div.tile {
+    height: 100px; width: 100%;
+    &.color1 { background: $color1; }
+    &.color2 { background: $color2; }
+    &.alt1 { background: $alt1; }
+    &.alt2 { background: $alt2; }
+    &.success1 { background: $success1; }
+    &.success2 { background: $success2; }
+    &.notice1 { background: $notice1; }
+    &.notice2 { background: $notice2; }
+    &.error1 { background: $error1; }
+    &.error2 { background: $error2; }
+    &.white { background: $white; }
+    &.black { background: $black; }
+  }
+}
+
 // FORMS
 body.pages.forms {
   div.wrapper { @include container; }
@@ -76,4 +99,5 @@ body.pages.navigation {
   div.tab-wrapper { @include tab-style-simple; }
   div.pill-wrapper { @include pill-style-simple; }
   nav.pagination.simple { @include pagination-style-simple; }
+  nav.pagination.kaminari { @include pagination-style-kaminari; }
 }

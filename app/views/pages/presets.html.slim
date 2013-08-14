@@ -1,0 +1,68 @@
+h3 Presets
+code @import 'jetpack/presets';
+p Jetpack modules make use of some configuration variables which need
+  to be loaded before the rest of the library. You can (and are encouraged)
+  to override these settings for your app, and then to use these variables
+  in your code the same way Jetpack uses them. There are two main reasons:
+
+ol
+  li This will help enforce consistency in your design.
+  li This will make it much easier for you to make large-scale
+     design changes later on, should you decide to do so.
+
+p Here's a walkthrough of the presets file, section by section:
+
+h4 Colors
+p Jetpack uses color variables throughout, and I recommend you do to. Colors
+  are typically the most inconsistent thing in a web application. No reason
+  for that when you're using SASS. Be disciplined in selecting and using brand
+  colors, and your design work will be better.
+
+.color-samples
+  .row
+    .color
+      code $color1
+      .tile.color1
+    .color
+      code $alt1
+      .tile.alt1
+  .row
+    .color
+      code $color2
+      .tile.color2
+    .color
+      code $alt2
+      .tile.alt2
+  .row
+    .color
+      code $success1
+      .tile.success1
+    .color
+      code $notice1
+      .tile.notice1
+    .color
+      code $error1
+      .tile.error1
+  .row
+    .color
+      code $success2
+      .tile.success2
+    .color
+      code $notice2
+      .tile.notice2
+    .color
+      code $error2
+      .tile.error2
+  .row
+    .color
+      code $white
+      .tile.white
+    .color
+      code $black
+      .tile.black
+
+p.note Why define white and black? What if you decide
+       your theme would work best with slightly off-white
+       or a slightly tinted near-black color? This way you
+       can experiment with every major color in your app
+       using just one line.
