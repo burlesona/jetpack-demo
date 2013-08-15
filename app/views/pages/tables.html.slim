@@ -109,7 +109,7 @@ table.shaded
       td Item 2C
       td Item 3C
 
-code @include table-style-shaded(#C9D0FF);
+code @include table-style-shaded(lighten($color1,15%));
 table.shaded-blue
   caption Horizontal Headers Only
   thead
@@ -135,7 +135,7 @@ table.shaded-blue
       td Item 3C
       td Item 4C
 
-code @include table-style-shaded(#FEE5BC);
+code @include table-style-shaded(lighten($alt1,10%));
 table.shaded-yellow
   caption Vertical Headers Only
   tbody
@@ -188,7 +188,7 @@ table.striped
       td Item 2C
       td Item 3C
 
-code @include table-style-striped(#C9D0FF);
+code @include table-style-striped(lighten($color1,15%));
 table.striped-blue
   caption Horizontal Headers Only
   thead
@@ -214,7 +214,7 @@ table.striped-blue
       td Item 3C
       td Item 4C
 
-code @include table-style-striped(#FEE5BC);
+code @include table-style-striped(lighten($alt1,10%));
 table.striped-yellow
   caption Vertical Headers Only
   tbody

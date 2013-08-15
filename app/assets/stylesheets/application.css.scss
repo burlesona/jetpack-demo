@@ -3,6 +3,15 @@
 @import 'jetpack';
 
 // General Purpose
+
+body { background: $white; }
+
+nav.main {
+  @include nav-style-simple;
+  span.arrow { display: inline-block; margin-left: 6px; font-size: $baseline*2; font-weight: 300; color: lighten($color1,20%); }
+  li { font-weight: 300; }
+}
+
 div.sample {
   @include container;
   div.label { @include grid(1,4); }
@@ -44,6 +53,10 @@ body.pages.presets {
     &.color2 { background: $color2; }
     &.alt1 { background: $alt1; }
     &.alt2 { background: $alt2; }
+    &.light1 { background: $light1; }
+    &.light2 { background: $light2; }
+    &.dark1 { background: $dark1; }
+    &.dark2 { background: $dark2; }
     &.success1 { background: $success1; }
     &.success2 { background: $success2; }
     &.notice1 { background: $notice1; }
@@ -86,11 +99,11 @@ body.pages.tables {
   div.wrapper { @include container; }
   table.simple { @include table-style-simple; }
   table.shaded { @include table-style-shaded; }
-  table.shaded-blue { @include table-style-shaded(#C9D0FF); }
-  table.shaded-yellow { @include table-style-shaded(#FEE5BC); }
+  table.shaded-blue { @include table-style-shaded(lighten($color1,15%)); }
+  table.shaded-yellow { @include table-style-shaded(lighten($alt1,10%)); }
   table.striped { @include table-style-striped; }
-  table.striped-blue { @include table-style-striped(#C9D0FF); }
-  table.striped-yellow { @include table-style-striped(#FEE5BC); }
+  table.striped-blue { @include table-style-striped(lighten($color1,15%)); }
+  table.striped-yellow { @include table-style-striped(lighten($alt1,10%)); }
 }
 
 // NAVIGATION
