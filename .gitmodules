@@ -1,0 +1,3 @@
+[submodule "vendor/jetpack-rails"]
+	path = vendor/jetpack-rails
+	url = git@github.com:burlesona/jetpack-rails.git
