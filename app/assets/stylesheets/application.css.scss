@@ -68,6 +68,16 @@ body.pages.presets {
   }
 }
 
+// CORE
+body.pages.core {
+  div.wrapper { @include container; }
+}
+
+// TYPOGRAPHY
+body.pages.typography {
+  div.wrapper { @include container; }
+}
+
 // FORMS
 body.pages.forms {
   div.wrapper { @include container; }
