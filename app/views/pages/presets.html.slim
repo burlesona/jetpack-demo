@@ -10,6 +10,51 @@ ol
   li This will make it much easier for you to make large-scale
      design changes later on, should you decide to do so.
 
+p The recommended use is to copy the presets, paste them above
+  any jetpack style modules you include, and tweak to your heart's content.
+  This way all your application-wide variables are set at the top of your
+  stylesheet stack. You can use the sample file below or copy directly
+  from source.
+
+pre
+  |
+    // TODO - Add full comments here
+    // COLOR DEFINITIONS
+    $light1: #EAEBEC;
+    $light2: #9A9FA0;
+
+    $dark1: #3C3E40;
+    $dark2: #262728;
+
+    $color1: #F4B84D;
+    $color2: #E59013;
+
+    $alt1: #4E7DF2;
+    $alt2: #2C4A84;
+
+    $success1: #D7EDC3;
+    $success2: #68AF2F;
+
+    $notice1: #FFFD7D;
+    $notice2: #FFD939;
+
+    $error1: #FFDCDC;
+    $error2: #D64338;
+
+    $white: #FFFFFF;
+    $black: #000000;
+
+    // TYPOGRAPHY DEFINITIONS
+    $sans: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    $serif: "Georgia", "Times", "Times New Roman", serif;
+    $mono: "Monaco", "Andale Mono", "Courier New", monospace;
+
+    $base_font: $sans;
+    $base_size: 13px;
+    $base_weight: 400;
+    $baseline: 18px;
+    $responsive: true;
+
 p Here's a walkthrough of the presets file, section by section:
 
 h4 Colors
