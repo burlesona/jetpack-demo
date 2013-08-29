@@ -111,16 +111,39 @@ p
     mixins that the other modules rely on.
 
 h4 Components
-ul.components
-  li Clearfix
-  li Respond-To
-  li Border Radius
-  li Box Shadow
-  li Gradient
-  li Buttonize
-  li Gutter
-  li Full-Screen
-  li Fill-Container
+table.simple
+  thead
+    tr
+      th Mixin
+      th Description
+  tbody
+    tr
+      td <code>@mixin clearfix;</code>
+      td Your standard clearfix, include in any element that needs to clear.
+    tr
+      td <code>@mixin respond-to(media);</code>
+      td CSS Media Query mixin. Use with <code>mobile</code> or <code>tablet</code> to define styles for those display widths.
+    tr
+      td <code>@mixin border-radius($size);</code>
+      td Cross-browser border radius mixin. Default radius 1/4 baseline (5px).
+    tr
+      td <code>@mixin box-shadow($style);</code>
+      td Cross-browser box shadow. Takes style string like <code>0px 1px 0px $dark1</code>.
+    tr
+      td <code>@mixin gradient($startColor, $endColor);</code>
+      td Cross-browser gradient. Takes two colors.
+    tr
+      td <code>@mixin buttonize($primaryColor, $secondaryColor);</code>
+      td Simple CSS styles that many anything look like a button.
+    tr
+      td <code>@mixin gutter($side, $style, $size)</code>
+      td Simple CSS style to add margin, padding, and a border to one side of an element.
+    tr
+      td <code>@mixin full-screen;</code>
+      td CSS style for a full screen overlay.
+    tr
+      td <code>@mixin fill-container;</code>
+      td CSS style for an element that will completely fill a relative-positioned parent.
 
 h3 Resetize <small>optional</small>
 code @import 'jetpack/resetize';
