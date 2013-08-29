@@ -1,9 +1,14 @@
-h1 Form Page! Woo.
+h3 Interface
+code @import 'jetpack/forms';
+p A collection of styles for forms.
+  Horizontal (labels beside inputs) and vertical (labels above inputs) styles are
+  included in the module.
 
-p
-  | This example form uses a real ActiveRecord model with pretty
-    much every kind of field you can have. The markup is the default
-    from simple_form.
+
+h4 Example
+p This example form uses a real ActiveRecord model with pretty
+  much every kind of field you can have. The markup is the default
+  from simple_form.
 
 - @sample = Sample.find(1)
 - @sample.errors.add :description, "Here is an error message."
