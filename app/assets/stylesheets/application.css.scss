@@ -114,3 +114,20 @@ body.pages.navigation {
   nav.pagination.simple { @include pagination-style-simple; }
   nav.pagination.kaminari { @include pagination-style-kaminari; }
 }
+
+// INTERFACE
+body.pages.interface {
+  div.wrapper { @include container;}
+  div.row { @include clearfix; margin-bottom: $baseline; }
+  div.button-wrapper, div.label-wrapper {
+    @include grid(1,2);
+    table { width: 100%; }
+    tr { border-bottom: 1px solid $light1; }
+    td { padding: $baseline/2 0; }
+    td:first-child { width: 65%; }
+    span.name { display: block; font-weight: 700; }
+  }
+  div.message-wrapper {
+    .message { @include message; }
+  }
+}
