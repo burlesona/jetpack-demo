@@ -4,7 +4,7 @@ p A collection of styles for common user interface components.
   Buttons, labels, and messages are included in the module.
 
 .row
-  .button-wrapper
+  .column
     h4 Buttons
     code @include button;
     .note Included in <code>Defaults</code> as <code>a.button</code> and <code>span.button</code>.
@@ -34,7 +34,7 @@ p A collection of styles for common user interface components.
         td
           a.button.small.danger href="#" Dangerous
 
-  .label-wrapper
+  .column
     h4 Labels
     code @include label;
     .note Included in <code>Defaults</code> as <code>span.label</code>.
@@ -64,9 +64,28 @@ p A collection of styles for common user interface components.
         td
           span.label.error Error
 
-.messages-wrapper
+.row
+  h4 Button Customization
+  p Button colors can be customized using the `buttonize` mixin:
+  a.button Normal
+  a.button.primary Color 1
+  a.button.alt Alt 1
+  a.button.success Success
+
+.row
+  h4 Buttons and Button-Like Elements
+  p The various "button-like" elements of the page all look the same and
+    line up nicely next to each other, so you can easily add something
+    like a cancel button next to a form submit button.
+  button href="#" Button Element
+  input type="submit" value="Submit Input"
+  a.button Anchor Button
+  span.button Span Button
+
+.row
   h4 Messages
-  .message Normal Message
+  .message Default Message
   .message.success Success Message
   .message.notice Notice Message
   .message.error Error Message
+  .message.notice data-persist="true" Closable Message
