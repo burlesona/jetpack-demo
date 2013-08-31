@@ -3,74 +3,122 @@ code @import 'jetpack/interface';
 p A collection of styles for common user interface components.
   Buttons, labels, and messages are included in the module.
 
-.row
-  .column
-    h4 Buttons
-    code @include button;
-    .note Included in <code>Defaults</code> as <code>a.button</code> and <code>span.button</code>.
-    table.examples
-      tr
-        td
-          span.name Normal Button
-          code & (base style)
-        td
-          a.button href="#" Take Action
-      tr
-        td
-          span.name Small Button
-          code &.small
-        td
-          a.button.small href="#" Action
-      tr
-        td
-          span.name Danger Button
-          code &.danger
-        td
-          a.button.danger href="#" Dangerous Action
-      tr
-        td
-          span.name Small Danger Button
-          code &.small.danger
-        td
-          a.button.small.danger href="#" Dangerous
+h4 Buttons
+code @include button($buttonColor: $light1, $textColor: $dark2);
+p The button mixin creates an inline-block element that looks like a button.
+  The button color and text color can be provided as options.
 
-  .column
-    h4 Labels
-    code @include label;
-    .note Included in <code>Defaults</code> as <code>span.label</code>.
-    table.examples
-      tr
-        td
-          span.name Normal Label
-          code & (base style)
-        td
-          span.label Label
-      tr
-        td
-          span.name Success Label
-          code &.success
-        td
-          span.label.success Success
-      tr
-        td
-          span.name Notice Label
-          code &.notice
-        td
-          span.label.notice Notice
-      tr
-        td
-          span.name Notice Label
-          code &.notice
-        td
-          span.label.error Error
+table.examples.buttons
+  caption
+    p Example Button Styles
+    code a.bt-example { @include button(...) };
+  thead
+    tr
+      th
+      th
+        code @include button;
+      th
+        code @include button($color1);
+      th
+        code @include button($alt1);
+      th
+        code @include button($error2);
+  tbody
+    tr
+      th
+        code a.bt-example
+      td.default
+        a.bt-example Button
+      td.color1
+        a.bt-example Button
+      td.alt1
+        a.bt-example Button
+      td.error1
+        a.bt-example Button
+    tr
+      th
+        code a.bt-example.active
+      td.default
+        a.bt-example.active Button
+      td.color1
+        a.bt-example.active Button
+      td.alt1
+        a.bt-example.active Button
+      td.error1
+        a.bt-example.active Button
+    tr
+      th
+        code a.bt-example.small
+      td.default
+        a.bt-example.disabled Button
+      td.color1
+        a.bt-example.disabled Button
+      td.alt1
+        a.bt-example.disabled Button
+      td.error1
+        a.bt-example.disabled Button
+    tr
+      th
+        code a.bt-example.small
+      td.default
+        a.bt-example.small Button
+      td.color1
+        a.bt-example.small Button
+      td.alt1
+        a.bt-example.small Button
+      td.error1
+        a.bt-example.small Button
+    tr
+      th
+        code a.bt-example.small.active
+      td.default
+        a.bt-example.small.active Button
+      td.color1
+        a.bt-example.small.active Button
+      td.alt1
+        a.bt-example.small.active Button
+      td.error1
+        a.bt-example.small.active Button
+    tr
+      th
+        code a.bt-example.small.disabled
+      td.default
+        a.bt-example.small.disabled Button
+      td.color1
+        a.bt-example.small.disabled Button
+      td.alt1
+        a.bt-example.small.disabled Button
+      td.error1
+        a.bt-example.small.disabled Button
 
-.row
-  h4 Button Customization
-  p Button colors can be customized using the `buttonize` mixin:
-  a.button Normal
-  a.button.primary Color 1
-  a.button.alt Alt 1
-  a.button.success Success
+
+h4 Labels
+code @include label;
+table.examples
+tr
+  td
+    span.name Normal Label
+    code & (base style)
+  td
+    span.label Label
+tr
+  td
+    span.name Success Label
+    code &.success
+  td
+    span.label.success Success
+tr
+  td
+    span.name Notice Label
+    code &.notice
+  td
+    span.label.notice Notice
+tr
+  td
+    span.name Notice Label
+    code &.notice
+  td
+    span.label.error Error
 
 .row
   h4 Buttons and Button-Like Elements

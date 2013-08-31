@@ -18,6 +18,15 @@ div.sample {
   div.content { @include grid(3,4); }
 }
 
+table.examples {
+  width: 100%;
+  th { text-align: left; }
+  tr { border-bottom: 1px solid $light1; }
+  th, td { padding: $baseline/2; }
+  td:first-child { width: 65%; }
+  span.title { display: block; font-weight: 700; }
+}
+
 // PAGES
 
 // HOME
@@ -115,15 +124,10 @@ body.pages.navigation {
 // INTERFACE
 body.pages.interface {
   div.wrapper { @include container;}
-  div.row { @include clearfix; margin-bottom: $baseline; }
-  div.column { @include grid(1,2); }
-  table.examples {
-    width: 100%;
-    tr { border-bottom: 1px solid $light1; }
-    td { padding: $baseline/2 0; }
-    td:first-child { width: 65%; }
-    span.name { display: block; font-weight: 700; }
+  table.buttons {
+    td.default a.bt-example { @include buttonize-2; }
+    td.color1 a.bt-example { @include buttonize-2($color1,$white); }
+    td.alt1 a.bt-example { @include buttonize-2($alt1,$white); }
+    td.error1 a.bt-example { @include buttonize-2($error2,$white); }
   }
-
-  .message { @include message; }
 }
