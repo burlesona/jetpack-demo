@@ -11,7 +11,7 @@ p The button mixin creates an inline-block element that looks like a button.
 table.examples.buttons
   caption
     p Example Button Styles
-    code a.bt-example { @include button(...) };
+    code a.example { @include button(...) };
   thead
     tr
       th
@@ -26,102 +26,73 @@ table.examples.buttons
   tbody
     tr
       th
-        code a.bt-example
+        code a.example
       td.default
-        a.bt-example Button
+        a.example Button
       td.color1
-        a.bt-example Button
+        a.example Button
       td.alt1
-        a.bt-example Button
+        a.example Button
       td.error1
-        a.bt-example Button
+        a.example Button
     tr
       th
-        code a.bt-example.active
+        code a.example.active
       td.default
-        a.bt-example.active Button
+        a.example.active Button
       td.color1
-        a.bt-example.active Button
+        a.example.active Button
       td.alt1
-        a.bt-example.active Button
+        a.example.active Button
       td.error1
-        a.bt-example.active Button
+        a.example.active Button
     tr
       th
-        code a.bt-example.small
+        code a.example.disabled
       td.default
-        a.bt-example.disabled Button
+        a.example.disabled Button
       td.color1
-        a.bt-example.disabled Button
+        a.example.disabled Button
       td.alt1
-        a.bt-example.disabled Button
+        a.example.disabled Button
       td.error1
-        a.bt-example.disabled Button
+        a.example.disabled Button
     tr
       th
-        code a.bt-example.small
+        code a.example.small
       td.default
-        a.bt-example.small Button
+        a.example.small Button
       td.color1
-        a.bt-example.small Button
+        a.example.small Button
       td.alt1
-        a.bt-example.small Button
+        a.example.small Button
       td.error1
-        a.bt-example.small Button
+        a.example.small Button
     tr
       th
-        code a.bt-example.small.active
+        code a.example.small.active
       td.default
-        a.bt-example.small.active Button
+        a.example.small.active Button
       td.color1
-        a.bt-example.small.active Button
+        a.example.small.active Button
       td.alt1
-        a.bt-example.small.active Button
+        a.example.small.active Button
       td.error1
-        a.bt-example.small.active Button
+        a.example.small.active Button
     tr
       th
-        code a.bt-example.small.disabled
+        code a.example.small.disabled
       td.default
-        a.bt-example.small.disabled Button
+        a.example.small.disabled Button
       td.color1
-        a.bt-example.small.disabled Button
+        a.example.small.disabled Button
       td.alt1
-        a.bt-example.small.disabled Button
+        a.example.small.disabled Button
       td.error1
-        a.bt-example.small.disabled Button
-
-
-h4 Labels
-code @include label;
-table.examples
-tr
-  td
-    span.name Normal Label
-    code & (base style)
-  td
-    span.label Label
-tr
-  td
-    span.name Success Label
-    code &.success
-  td
-    span.label.success Success
-tr
-  td
-    span.name Notice Label
-    code &.notice
-  td
-    span.label.notice Notice
-tr
-  td
-    span.name Notice Label
-    code &.notice
-  td
-    span.label.error Error
+        a.example.small.disabled Button
 
 .row
-  h4 Buttons and Button-Like Elements
+  h4 Real Buttons and Button-Like Elements
   p The various "button-like" elements of the page all look the same and
     line up nicely next to each other, so you can easily add something
     like a cancel button next to a form submit button.
@@ -130,10 +101,45 @@ tr
   a.button Anchor Button
   span.button Span Button
 
-.row
-  h4 Messages
+
+h4 Labels
+code @include label;
+p The label mixin creates an inline-block element that looks like a label.
+table.examples.labels
+  caption
+    p Example Label Styles
+    code @include label;
+  tbody
+    tr
+      th
+        code .label
+      td
+        span.label Label
+    tr
+      th
+        code .label.success
+      td
+        span.label.success Success
+    tr
+      th
+        code .label.notice
+      td
+        span.label.notice Notice
+    tr
+      th
+        code .label.error
+      td
+        span.label.error Error
+
+
+h4 Messages
+code @include message;
+p The message mixin creates a block element well-suited for a user notification message.
+.messages
   .message Default Message
   .message.success Success Message
   .message.notice Notice Message
   .message.error Error Message
-  .message.notice data-persist="true" Closable Message
+  .message.notice data-persist="true"
+    | Closable Message
+    a.close x

@@ -125,9 +125,15 @@ body.pages.navigation {
 body.pages.interface {
   div.wrapper { @include container;}
   table.buttons {
-    td.default a.bt-example { @include buttonize-2; }
-    td.color1 a.bt-example { @include buttonize-2($color1,$white); }
-    td.alt1 a.bt-example { @include buttonize-2($alt1,$white); }
-    td.error1 a.bt-example { @include buttonize-2($error2,$white); }
+    td.default a.example { @include button; }
+    td.color1 a.example { @include button($color1,$white); }
+    td.alt1 a.example { @include button($alt1,$white); }
+    td.error1 a.example { @include button($error2,$white); }
+  }
+  .message {
+    @include message;
+    &.success { @include message($success1,darken($success2,20%)); }
+    &.notice { @include message($notice1,darken($notice2,25%)); }
+    &.error { @include message($error1,darken($error2,10%)); }
   }
 }
