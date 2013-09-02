@@ -1,47 +1,23 @@
-h1 Jetpack
-p A modern, modular bootstrap that helps without hurting.
+header.site-title
+  h1 Jetpack
+  h2 A minimal, modern, modular UI framework that helps without hurting.
 
-h2 Philosophy
-ul
-  li Simple
-  li Responsive
-  li Modular
-  li Graceful Degradation
+h2 Why?
+p In a world with so many existing UI frameworks, why did I bother
+  creating this one?
 
-h2 Why?!?
-p
-  | Twitter Bootstrap is really neat. But you know what? It's also
-    really opinionated. This is fine, unless you're really opinionated
-    in a different direction. <em>Amirite?</em>
-    Jetpack assumes that you're making great web applications and that
-    you're pretty competent. It will help you work faster by doing a lot
-    of boilerplate stuff for you, and beyond that you're on your own, champ.
+ol
+  li Jetpack is optimized for Rails apps, which is helpful for many.
+  li Jetpack doesn't pollute your css like many other frameworks do,
+     instead it just provides mixins which make it easy for you to
+     create a unique looking application quickly.
+  li Jetpack is totally modular, so it's really easy to pick and choose
+     the bits that you like, whilst ignoring or replacing anything you don't.
 
-p
-  | In the end, there's no such thing as a perfect bootstrap. This one
-    is pretty good, and if you disagree with part of it, you can painlessly
-    kick that part of it to the curb.
+p If those sound like nice things for you, then you should give Jetpack
+  a try. If not, well, there are like a million more of these UI frameworks out there,
+  and I bet one of them will suit you nicely.
 
-p
-  ' <em>One more thing...</em> Everyone is using Twitter Bootstrap these days.
-    It's so ubiquitous
-  a href="https://wrapbootstrap.com/" there
-  '
-  a href="http://bootswatch.com/" are
-  '
-  a href="http://portnine.com/bootstrap-themes" a
-  '
-  a href="http://themeforest.net/search?utf8=%E2%9C%93&order_by=relevance&term=bootstrap+templates" bajillion
-  '
-  a href="http://www.boottheme.com/" [censored]
-  '
-  a href="http://www.templatemonster.com/properties/features/bootstrap-templates/" theme
-  '
-  a href="http://jumpstartui.com/" sites
-  '
-  ' for it so you won't look exactly like everyone else.
-    Why mess with that crap? Just use something a little lighter (and a
-    little different) and <strong>write some of your own CSS</strong> (ffs).
 
 h2 Quick Start
 
@@ -142,3 +118,26 @@ p Jetpack Helpers is a set of Rails helpers that make it just a tad faster to pu
   together. The <code>view_name</code> helper is really useful for CSS namespacing, and
   the <code>title</code> and <code>flash_messages</code> helpers are just quick timesavers
   that are used in nearly every app.
+
+
+h2
+  | Epilogue
+  small A more in-depth discussion about how Jetpack came to be:
+
+p When I first sat down and started working on Jetpack, here is what
+  I was thinking:
+
+ol
+  li Twitter Bootstrap is really neat, but it has become so ubiquitous that
+     using it "out of the box" is kind of like waving a flag that says "I don't
+     have the skill to design my own decent-looking app!"
+  li When you try to heavily customize Twitter Bootstrap so you don't look like
+     a noob, you'll quickly discover it has polluted your entire CSS namespace and
+     it can be a lot of work to override. So much work, in fact, that if you really
+     want your site to look different you're basically going to be recreating most of
+     the bootstrap from scratch anyway. In that case, why not just copy/paste the bits
+     you want to use instead of importing the whole thing and overriding it all?
+  li While none of the other UI frameworks out there are so popular as to have become
+     cliche, most of them still work by defining lots of styles for you, which you then
+     need to override if you want too adjust them. Again, why not just copy/paste the bits
+     you like?

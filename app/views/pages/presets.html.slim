@@ -1,9 +1,13 @@
-h3 Presets
-code @import 'jetpack/presets';
-p Jetpack modules make use of some configuration variables which need
-  to be loaded before the rest of the library. You can (and are encouraged)
-  to override these settings for your app, and then to use these variables
-  in your code the same way Jetpack uses them. There are two main reasons:
+header.page-title
+  h1
+    ' Presets
+    small Optional
+  code @import 'jetpack/presets';
+  p This module defines configuration variables for the framework.
+
+p You can (and should) override these settings for your app,
+  and then to use these variables in your code the same way Jetpack uses
+  them. There are two main reasons:
 
 ol
   li This will help enforce consistency in your design.
@@ -13,13 +17,11 @@ ol
 p The recommended use is to copy the presets, paste them above
   any jetpack style modules you include, and tweak to your heart's content.
   This way all your application-wide variables are set at the top of your
-  stylesheet stack. You can use the sample file below or copy directly
+  stylesheet stack. You can use the sample below or copy directly
   from source.
 
 pre
-  |
-    // TODO - Add full comments here
-    // COLOR DEFINITIONS
+  | // COLOR DEFINITIONS
     $light1: #EAEBEC;
     $light2: #9A9FA0;
 
@@ -63,64 +65,50 @@ p Jetpack uses color variables throughout, and I recommend you do to. Colors
   for that when you're using SASS. Be disciplined in selecting and using brand
   colors, and your design work will be better.
 
-.color-samples
+.sample.colors
   .row
     .color
-      code $color1
-      .tile.color1
+      .tile.color1 $color1
     .color
-      code $alt1
-      .tile.alt1
+      .tile.alt1 $alt1
   .row
     .color
-      code $color2
-      .tile.color2
+      .tile.color2 $color2
     .color
-      code $alt2
-      .tile.alt2
+      .tile.alt2 $alt2
   .row
     .color
-      code $success1
-      .tile.success1
+      .tile.success1 $success1
     .color
-      code $notice1
-      .tile.notice1
+      .tile.notice1 $notice1
     .color
-      code $error1
-      .tile.error1
+      .tile.error1 $error1
   .row
     .color
-      code $success2
-      .tile.success2
+      .tile.success2 $success2
     .color
-      code $notice2
-      .tile.notice2
+      .tile.notice2 $notice2
     .color
-      code $error2
-      .tile.error2
+      .tile.error2 $error2
   .row
     .color
-      code $white
-      .tile.white
+      .tile.light1 $light1
     .color
-      code $light1
-      .tile.light1
+      .tile.dark1 $dark1
     .color
-      code $light2
-      .tile.light2
+      .tile.white $white
   .row
     .color
-      code $dark1
-      .tile.dark1
+      .tile.light2 $light2
     .color
-      code $dark2
-      .tile.dark2
+      .tile.dark2 $dark2
     .color
-      code $black
-      .tile.black
+      .tile.black $black
 
-p.note Why define white and black? What if you decide
-       your theme would work best with slightly off-white
-       or a slightly tinted near-black color? This way you
-       can experiment with every major color in your app
-       using just one line.
+  p.note
+    strong> Note:
+    ' Why define white and black? What if you decide
+      your theme would work best with slightly off-white
+      or a slightly tinted near-black color? This way you
+      can experiment with every major color in your app
+      using just one line.

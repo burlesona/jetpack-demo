@@ -8,5 +8,6 @@ html
     meta name="viewport" content="width=device-width, initial-scale=1"
 
   body class=view_name
-    nav.main= render 'layouts/header'
-    .wrapper= yield
+    .outer-wrapper
+      nav.main= render 'layouts/header'
+      section.main= yield

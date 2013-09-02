@@ -2,27 +2,70 @@
 @import 'jetpack/presets';
 @import 'jetpack';
 
-// General Purpose
-
+// Layout
 body { background: $white; }
-
+.outer-wrapper { margin:0 auto; width: 80%; max-width: 960px; min-width: 320px; }
 nav.main {
-  @include nav-style-simple;
-  span.arrow { display: inline-block; margin-left: 6px; font-size: $baseline*2; font-weight: 300; color: lighten($color1,20%); }
-  li { font-weight: 300; }
+  position: fixed; width: 15%; margin-right: 5%; top: 18px;
+  @include respond-to(mobile) { position: static; display: block; width: 100%; margin: 0; }
+}
+section.main {
+  margin-left: 20%; width: 80%;
+  @include respond-to(mobile) { margin:0; width: 100%; }
 }
 
+nav.main {
+  .title {
+    height: $baseline;
+    a { display: inline-block; vertical-align: 1px; }
+    .arrow {
+      display: inline-block;
+      vertical-align: 0;
+      margin-left: 6px; font-size: $baseline*2;
+      font-weight: 300; color: lighten($color1,20%);
+    }
+  }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { font-weight: 300; }
+  a { text-decoration: none; color: $dark2;
+    &:hover { text-decoration: underline; }
+    &.current { font-weight: 700; }
+  }
+}
+
+header.site-title {
+  margin-top: $baseline +2px;
+  h1 { line-height: 1; margin:0; }
+  h2 { font-weight: 300; margin:0; line-height: 1; }
+}
+
+header.page-title {
+  @include gutter(bottom, 4px double $light1);
+  h1 small { margin-left: 4px; font-size: 18px; text-transform: lowercase; font-weight: 300; color: $light2; }
+  p { margin-bottom: 0; }
+}
+
+// General Purpose
 div.sample {
-  @include container;
-  div.label { @include grid(1,4); }
-  div.content { @include grid(3,4); }
+  @include clearfix;
+  @include gutter(bottom, 1px solid $light1);
+  div.label {
+    @include fluid-grid(1,5);
+    font-weight: 300;
+  }
+  div.content {
+    @include fluid-grid(4,5);
+    :first-child {margin-top: 0;}
+  }
+  p.note { font-weight: 300; font-style: italic; }
 }
 
 table.examples {
   width: 100%;
-  th { text-align: left; }
+  th { text-align: left; font-weight: 300; text-transform: uppercase; }
   tr { border-bottom: 1px solid $light1; }
-  th, td { padding: $baseline/2; }
+  th, td { padding: $baseline/2 0; }
+  tr > th { width: 20%; }
   td:first-child { width: 65%; }
   span.title { display: block; font-weight: 700; }
 }
@@ -31,7 +74,6 @@ table.examples {
 
 // HOME
 body.pages.home {
-  div.wrapper { @include container; }
   h4 {
     font-weight: 300;
   }
@@ -39,70 +81,61 @@ body.pages.home {
 
 // PRESETS
 body.pages.presets {
-  div.wrapper { @include container; }
-
-  div.row { @include container; }
-  div.color { @include grid(1,4); }
+  div.row { @include clearfix; margin-bottom: $baseline/2; }
+  div.color { @include fluid-grid(1,3); }
   div.tile {
-    height: 100px; width: 100%;
+    height: 84px; padding: 4px 8px;
+    font-family: $mono; font-size: $base_size - 3px;
     &.color1 { background: $color1; }
-    &.color2 { background: $color2; }
+    &.color2 { background: $color2; color: $white; }
     &.alt1 { background: $alt1; }
-    &.alt2 { background: $alt2; }
+    &.alt2 { background: $alt2; color: $white; }
     &.light1 { background: $light1; }
     &.light2 { background: $light2; }
-    &.dark1 { background: $dark1; }
-    &.dark2 { background: $dark2; }
+    &.dark1 { background: $dark1; color: $white; }
+    &.dark2 { background: $dark2; color: $white; }
     &.success1 { background: $success1; }
     &.success2 { background: $success2; }
     &.notice1 { background: $notice1; }
     &.notice2 { background: $notice2; }
     &.error1 { background: $error1; }
-    &.error2 { background: $error2; }
+    &.error2 { background: $error2; color: $white; }
     &.white { background: $white; }
-    &.black { background: $black; }
+    &.black { background: $black;  color: $white; }
   }
 }
 
 // CORE
 body.pages.core {
-  div.wrapper { @include container; }
 }
 
 // TYPOGRAPHY
 body.pages.typography {
-  div.wrapper { @include container; }
 }
 
 // FORMS
 body.pages.forms {
-  div.wrapper { @include container; }
   form.standard { @include form-style-horizontal-responsive; }
 }
 
 // FRACTIONALIZE
 body.pages.fractionalize {
-  div.content { @include fluid-container; }
-  div.grid-container {
-    @include fluid-container;
-    .column {
-      background: $light1; @include border-radius(2px); height: 20px; margin-bottom: 5px;
-      line-height: 20px; text-align: center;
-    }
-    .one-one   { @include fluid-grid(1, 1); }
-    .one-two   { @include fluid-grid(1, 2); }
-    .one-three { @include fluid-grid(1, 3); }
-    .one-four  { @include fluid-grid(1, 4); }
-    .one-five  { @include fluid-grid(1, 5); }
-    .one-six   { @include fluid-grid(1, 6); }
-    .one-eight { @include fluid-grid(1, 8); }
-    .one-ten   { @include fluid-grid(1,10); }
+  .column {
+    background: $light1; @include border-radius(2px); height: 20px; margin-bottom: 5px;
+    line-height: 20px; text-align: center;
   }
+  .one-one   { @include fluid-grid(1, 1); }
+  .one-two   { @include fluid-grid(1, 2); }
+  .one-three { @include fluid-grid(1, 3); }
+  .one-four  { @include fluid-grid(1, 4); }
+  .one-five  { @include fluid-grid(1, 5); }
+  .one-six   { @include fluid-grid(1, 6); }
+  .one-eight { @include fluid-grid(1, 8); }
+  .one-ten   { @include fluid-grid(1,10); }
 }
 
 // TABLES
 body.pages.tables {
-  div.wrapper { @include container; }
   table.simple { @include table-style-simple; }
   table.shaded { @include table-style-shaded; }
   table.shaded-blue { @include table-style-shaded(lighten($color1,15%)); }
@@ -114,7 +147,6 @@ body.pages.tables {
 
 // NAVIGATION
 body.pages.navigation {
-  div.wrapper { @include container; }
   div.tab-wrapper { @include tab-style-simple; }
   div.pill-wrapper { @include pill-style-simple; }
   nav.pagination.simple { @include pagination-style-simple; }
@@ -123,7 +155,6 @@ body.pages.navigation {
 
 // INTERFACE
 body.pages.interface {
-  div.wrapper { @include container;}
   table.buttons {
     td.default a.example { @include button; }
     td.color1 a.example { @include button($color1,$white); }
