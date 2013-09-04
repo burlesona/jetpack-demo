@@ -18,23 +18,35 @@ table.simple
       td <code>@mixin respond-to(media);</code>
       td CSS Media Query mixin. Use with <code>mobile</code> or <code>tablet</code> to define styles for those display widths.
     tr
+      td <code>@mixin full-screen;</code>
+      td CSS style for a full screen overlay.
+    tr
+      td <code>@mixin fill-container;</code>
+      td CSS style for an element that will completely fill a relative-positioned parent.
+    tr
+      td <code>@mixin tint($color,$percent);</code>
+      td Lighten a color by mixing it with white.
+    tr
+      td <code>@mixin shade($color,$percent);</code>
+      td Darken a color by mixing it with black.
+    tr
+      td <code>@mixin inset-text($color,$background);</code>
+      td Defines a text and text-shadow color that will make text look inset against the given background color.
+    tr
+      td <code>@mixin gradient($startColor, $endColor);</code>
+      td Cross-browser gradient. Takes two colors.
+    tr
+      td <code>@mixin highlight($color, $lightness, $darkness);</code>
+      td Uses gradient to create a "highlight" effect.
+    tr
+      td <code>@mixin highlight-with-border($color, $lightness, $darkness);</code>
+      td Same as highlight, but also provides a colored border matching the highlight.
+    tr
       td <code>@mixin border-radius($size);</code>
       td Cross-browser border radius mixin. Default radius 1/4 baseline (5px).
     tr
       td <code>@mixin box-shadow($style);</code>
       td Cross-browser box shadow. Takes style string like <code>0px 1px 0px $dark1</code>.
     tr
-      td <code>@mixin gradient($startColor, $endColor);</code>
-      td Cross-browser gradient. Takes two colors.
-    tr
-      td <code>@mixin buttonize($primaryColor, $secondaryColor);</code>
-      td Simple CSS styles that many anything look like a button.
-    tr
       td <code>@mixin gutter($side, $style, $size)</code>
       td Simple CSS style to add margin, padding, and a border to one side of an element.
-    tr
-      td <code>@mixin full-screen;</code>
-      td CSS style for a full screen overlay.
-    tr
-      td <code>@mixin fill-container;</code>
-      td CSS style for an element that will completely fill a relative-positioned parent.
