@@ -7,16 +7,21 @@ p In a world with so many existing UI frameworks, why did I bother
   creating this one?
 
 ol
-  li Jetpack is optimized for Rails apps, which is helpful for many.
-  li Jetpack doesn't pollute your css like many other frameworks do,
+  li Jetpack includes a really cool #{link_to 'fractional grid', page_path('grid')} system.
+  li Jetpack doesn't pollute your css like most other frameworks do,
      instead it just provides mixins which make it easy for you to
      create a unique looking application quickly.
+  li Jetpack is designed to be totally customizable.
   li Jetpack is totally modular, so it's really easy to pick and choose
-     the bits that you like, whilst ignoring or replacing anything you don't.
+     the bits that you like, while ignoring or replacing anything you don't.
+  li Jetpack is optimized for Rails apps, which is helpful for many.
 
 p If those sound like nice things for you, then you should give Jetpack
   a try. If not, well, there are like a million more of these UI frameworks out there,
   and I bet one of them will suit you nicely.
+
+p If you want to know more about why and how Jetpack was created, see the
+  <a href="#epilogue">Epilogue</a>.
 
 
 h2 Quick Start
@@ -120,24 +125,37 @@ p Jetpack Helpers is a set of Rails helpers that make it just a tad faster to pu
   that are used in nearly every app.
 
 
-h2
-  | Epilogue
+h2#epilogue
+  | Epilogue<br>
   small A more in-depth discussion about how Jetpack came to be:
 
-p When I first sat down and started working on Jetpack, here is what
-  I was thinking:
+p I started building Jetpack in late 2011. At the time Twitter Bootstrap was just coming on
+  the scene, and everyone was pretty enthusiastic about it (including me). In the past I had
+  used css resets, things like Blueprint.CSS for grids, and created everything else from scratch
+  on a per-application basis. The bootstrap idea was obviously a better approach.
 
-ol
-  li Twitter Bootstrap is really neat, but it has become so ubiquitous that
-     using it "out of the box" is kind of like waving a flag that says "I don't
-     have the skill to design my own decent-looking app!"
-  li When you try to heavily customize Twitter Bootstrap so you don't look like
-     a noob, you'll quickly discover it has polluted your entire CSS namespace and
-     it can be a lot of work to override. So much work, in fact, that if you really
-     want your site to look different you're basically going to be recreating most of
-     the bootstrap from scratch anyway. In that case, why not just copy/paste the bits
-     you want to use instead of importing the whole thing and overriding it all?
-  li While none of the other UI frameworks out there are so popular as to have become
-     cliche, most of them still work by defining lots of styles for you, which you then
-     need to override if you want too adjust them. Again, why not just copy/paste the bits
-     you like?
+p That said, there were several things about the Twitter Bootstrap implementation that bugged me:
+ul
+  li TB was written in LESS, while I strongly prefer SCSS.
+  li TB is a bunch of selectors, meaning if you use it your css namespace is full of twitter stuff.
+  li TB is used by adhering to specific markup and using a lot of presentation classes.
+  li The CSS, intended markup, and JS in Bootstrap are all very tightly linked. Early on I found I
+     the javascript in particular was very easy to break by changing the CSS, which is a huge red flag in my book.
+
+p So, while I give the Twitter folks tons of credit for putting a great framework together and
+  making it open source (so people like me could copy the pants off it!), I wanted to take a different
+  approach. Here were my main goals:
+
+ul
+  li Don't pollute the CSS namespace with selectors.
+  li Avoid forcing very specific markup whenever possible.
+  li Avoid presentational css classes.
+  li Make everything in the framework easily customizable, tweakable, refinable etc.
+
+p So I started working on Jetpack, grabbing my favorite bits of Twitter Bootstrap and other CSS kits
+  like Skeleton, Normalize, and Formalize. I blended some of my own work into this, including the
+  Fractionalize library I already built. Then I started using it.
+
+p Jetpack has now been in use in production apps for more than two years, and has been steadily
+  refined along the way. It's getting very close to public release, at which time I'll add one more
+  note to this epilogue business about where I hope it goes moving forward.
