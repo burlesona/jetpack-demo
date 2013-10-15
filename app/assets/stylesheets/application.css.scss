@@ -1,6 +1,7 @@
 // APPLICATION MANIFEST
 @import 'jetpack/presets';
 @import 'jetpack';
+@import "jetpack/defaults";
 
 // Layout
 body { background: $white; }
@@ -167,6 +168,14 @@ body.pages.interface {
     &.success { @include message($success1,darken($success2,20%)); }
     &.notice { @include message($notice1,darken($notice2,25%)); }
     &.error { @include message($error1,darken($error2,10%)); }
+  }
+}
+
+// JAVASCRIPT
+body.pages.javascript {
+  .example {
+    .controls { @include fluid-grid(1,5); }
+    .viewport { @include fluid-grid(4,5); }
   }
 }
 

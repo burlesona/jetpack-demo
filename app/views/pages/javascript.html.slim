@@ -1,0 +1,95 @@
+header.page-title
+  h1
+    ' Javascript
+    small Optional
+  code= "//= require 'jetpack'"
+  p Jetpack JS includes a few simple, very common application components.
+    The entire set of components can be included by requiring `jetpack` in your
+    `application.js` manifest, or you can include any individual component instead.
+
+  p The only dependency for the jetpack js components is jQuery.
+
+
+h2 Flash Messages
+p The Flash Message function handles hiding or dismissing alert messages automatically
+  based on a passed data-attribute. If you wish to use Flash Messages in your application,
+  instantiate them like this:
+
+pre
+  | Jetpack.flashMessages.init()
+
+p You can optionally pass a selector string and an options hash. By default the selector is
+  <code>'.flash-message'</code>. There is only one option, delay. By default the delay is 2000 ms.
+
+pre
+  | Jetpack.flashMessages.init('.flash-message',{delay: 2000});
+
+p Messages with <code>data-persist=true</code> will stick around until the user closes them.
+  Messages with <code>data-persist=false</code> will close automatically after a delay.
+  If <code>data-persist</code> is not set, the message will persist by default.
+
+h4 Example
+.example.alerts
+  .controls
+    a href="#" class="show-alerts button" Reset
+  .viewport
+    .flash-message data-persist="true" Default Flash Message
+    .flash-message.alert data-persist="true" Alert Flash Message
+    .flash-message.notice data-persist="true" Notice Flash Message
+    .flash-message.success data-persist="true" Success Flash Message
+    .flash-message data-persist="false" Non-persisted Message
+
+h2 Modals
+p The Modal function takes an element and displays it over the rest of the screen. You'll need
+  to use CSS to complete the effect (no gross inline styles, thank you), but sensible defaults
+  are available in the interface module.
+p To setup the default modal behavior, you can use the convenience function:
+pre
+  | Jetpack.modal.init()
+
+p The function takes two options, <code>trigger</code> and <code>modalClass</code>.
+  If either option is absent the default is used instead, which looks like this:
+pre
+  | Jetpack.modal.init({trigger:'a[data-modal]', modalClass:'.modal-window'});
+
+p If you use the convenience initializer, the minimum setup is as follows:
+pre
+  ' &lt;a href="#" data-modal="my-modal"&gt;Open My Modal&lt;/a&gt;
+    &lt;div class="modal-window" id="my-modal"&gt;
+      This is the inside of the modal window.
+    &lt;/div&gt;
+
+p If you don't want to use the convenience initializer, you can the Jetpack.ModalWindow class
+  directly. Just pass a selector to initialize. That element will be hidden on initialize (but
+  you should really use CSS display none). Then call <code>.show()</code> and <code>.hide()</code>
+  on the modal object as you wish.
+pre
+  ' var myModal = new Jetpack.ModalWindow('div.my-modal-window')
+    myModal.show()
+    myModal.hide()
+
+p You can also insert/remove the modal window from the DOM on show/hide. To do this, pass a
+  template string for the modal window instead of a selector, and add the `append: true` option after
+  the template, like so:
+pre
+  ' var dynamicModal = new Jetpack.ModalWindow('&lt;div&gt;I am a modal window&lt;/div&gt;',{append: true})
+
+p If you go that route, Jetpack is not going to wrap the template in anything for you, so be sure to include
+  any container you want in the template and style it via CSS. If you're including the default modal window
+  styles you could just use a <code>div.modal-window</code> as a wrapper if you wanted to.
+
+.example.modal
+  h4 Example
+  a href="#" class="button" data-modal="demo" Show Default Modal
+  a href="#" class="append-modal button" Show Appended Modal
+
+h2 Tabs / Pills
+p docs tba
+
+h2 Tipsy (Tooltips and Popovers)
+p docs tba
+
+
+#demo.modal-window
+  h1 This is a demo modal window.
+  p It's simply a hidden element on the page which appears when called.
