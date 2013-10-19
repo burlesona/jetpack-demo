@@ -6,15 +6,33 @@ h2 Why?
 p In a world with so many existing UI frameworks, why did I bother
   creating this one?
 
+p Jetpack is roughly half-way between Twitter Bootstrap and Compass. It includes
+  both basic utilities and helpful presentational components, but it strives to
+  only include things that will actually be useful in 90% of applications, so it
+  isn't as big of a toolbelt as Compass, nor is it meant to design your entire app for you.
+  Jetpack aims to hit the sweet spot of being helpful without being overkill.
+
+p <strong>The biggest difference between Jetpack and the other mainstream UI frameworks is
+  that Jetpack doesn't do anything unless you specifically ask it to.</strong>
+
+p Jetpack doesn't automatically change your selectors or load javascript functions,
+  or anything like that. In SCSS it gives you helpful mixins to pick and choose
+  and use where you like. In Javascript it gives you functions you can call if
+  you feel like it. In Rails it gives you a helper module that you can include if
+  you want to.
+
+p When you add Jetpack to your project <strong>nothing happens automatically</strong>.
+  That means you never have to override anything you don't like, wonder where some settings
+  came from, or change the way you name things to avoid conflicts with your framework.
+
+p Some other neat things about Jetpack:
+
 ol
-  li Jetpack includes a really cool #{link_to 'fractional grid', page_path('grid')} system.
-  li Jetpack doesn't pollute your css like most other frameworks do,
-     instead it just provides mixins which make it easy for you to
-     create a unique looking application quickly.
-  li Jetpack is designed to be totally customizable.
-  li Jetpack is totally modular, so it's really easy to pick and choose
+  li It includes a really cool #{link_to 'fractional grid', page_path('grid')} system.
+  li It's designed to be totally customizable.
+  li It's totally modular, so it's really easy to pick and choose
      the bits that you like, while ignoring or replacing anything you don't.
-  li Jetpack is optimized for Rails apps, which is helpful for many.
+  li It's optimized for Rails apps, which is helpful for many.
 
 p If those sound like nice things for you, then you should give Jetpack
   a try. If not, well, there are like a million more of these UI frameworks out there,
@@ -102,8 +120,8 @@ code @import 'jetpack/navigation';
 p Jetpack Navigation is a set of helper styles for common nav UI
   elements.
 
-h4 Defaults <small>optional</small>
-code @import 'jetpack/defaults';
+h4 Selectors <small>optional</small>
+code @import 'jetpack/selectors';
 p Jetpack Defaults is the second file that includes selectors (the other being jetpack/resetize).
   If you'd like to have some simple stuff pre-defined for you, like <code>a.button</code>
   automatically including the default button style, then include this file.
@@ -117,8 +135,8 @@ p You can add Jetpack JS to your application by requiring it in your JS manifest
   You'll get a few handy helpers here, including alert messages, tool tips, and modals.
   See the source for details.
 
-h4 Helpers <small>included</small>
-code included by default
+h4 Helpers <small>optional</small>
+code | require Jetpack::RailsHelper
 p Jetpack Helpers is a set of Rails helpers that make it just a tad faster to put an app
   together. The <code>view_name</code> helper is really useful for CSS namespacing, and
   the <code>title</code> and <code>flash_messages</code> helpers are just quick timesavers

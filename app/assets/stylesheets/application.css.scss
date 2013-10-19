@@ -1,7 +1,7 @@
 // APPLICATION MANIFEST
 @import 'jetpack/presets';
 @import 'jetpack';
-@import "jetpack/defaults";
+@import "jetpack/selectors";
 
 // Layout
 body { background: $white; }
@@ -19,10 +19,10 @@ section.main {
 nav.main {
   .title {
     height: $baseline;
-    a { display: inline-block; vertical-align: 1px; }
+    a { display: inline-block; }
     .arrow {
       display: inline-block;
-      vertical-align: 0;
+      vertical-align: -6px;
       margin-left: 6px; font-size: $baseline*2;
       font-weight: 300; color: lighten($color1,20%);
     }
