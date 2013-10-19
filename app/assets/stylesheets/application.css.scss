@@ -153,6 +153,18 @@ body.pages.navigation {
   div.pill-wrapper { @include pill-style-simple; }
   nav.pagination.simple { @include pagination-style-simple; }
   nav.pagination.kaminari { @include pagination-style-kaminari; }
+
+  div.funky {
+    .linkers a {
+      color: red;
+      &.active { color: blue; }
+    }
+    .viewdom div {
+      display: none;
+      &.active { display: block; }
+    }
+  }
+
 }
 
 // INTERFACE

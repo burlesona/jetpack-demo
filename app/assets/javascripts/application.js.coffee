@@ -5,12 +5,10 @@
 #= require_tree .
 
 jQuery ->
-  # USE JETPACK JS COMPONENTS
-  $('ul.tabs').tabs()
-  $('ul.pills').pills()
-
   Jetpack.flashMessages.init()
   Jetpack.modal.init()
+  Jetpack.tabs.init()
+  Jetpack.pills.init()
 
   # PAGE-SPECIFIC BINDINGS
   jsView.init() if $('body.javascript').length

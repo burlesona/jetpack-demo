@@ -84,7 +84,69 @@ p If you go that route, Jetpack is not going to wrap the template in anything fo
   a href="#" class="append-modal button" Show Appended Modal
 
 h2 Tabs / Pills
-p docs tba
+p The Tabs Function (and it's Pills alias) adds tabbed windows to your app. The function
+  can take any "tab-like" dom structure and make it interactive. The function doesn't do
+  styling for you, but instead relies on a <code>.active</code> class being available to
+  distinguish between links and views that are active or not.
+
+p To bind this function with the default behavior you can use the convenience initializer
+  for either tabs or pills, like so:
+pre
+  ' Jetpack.tabs.init()
+    Jetpack.pills.init()
+
+p Under the hood these both do the same thing, just with different default options. The
+  defaults are:
+pre
+  ' Jetpack.tabs.init({wrapper: '.tab-wrapper', nav:'.tabs', viewport: '.viewport'});
+    Jetpack.pills.init({wrapper: '.pill-wrapper', nav:'.pills', viewport: '.viewport'});
+
+p Both functions are calling <code>Jetpack.tabs.bind()</code>, which takes each matching
+  wrapper element and uses it to create a new <code>Jetpack.TabView</code>.
+pre
+  ' new Jetpack.TabView(selector,options)
+
+p The first argument (selector) will be wrapped in a jQuery function (<code>$(selector)</code>),
+  so anything you could pass to <code>$()</code> will work, but make sure that it will
+  only have a length of one.
+
+p The options argument takes the nav and viewport settings. The constructor does not provide
+  defaults, and won't work if you don't pass it the options. The convenience intializer does
+  this for you.
+
+p To create a tab view manually, just pass these options yourself, like so:
+pre
+  ' var tabView = new Jetpack.TabView('#my-tabs',{nav: '.tabs',viewport:'.viewport'});
+
+p The Jetpack.TabView will then bind whatever links it finds under the <code>nav</code> selector
+  and bind to click events. It will actually delegate this to the container, so if you add
+  new tabs and viewports via Ajax they should still work. (I actually haven't needed to do
+  this yet, so to be honest I haven't tested that.)
+
+p To connect the links and the viewports, the viewports should each have a unique ID, and the
+  href attribute of the link should point to that ID. Therefore if your markup looks like this
+  it will work:
+pre
+  ' &lt;a href="#myTab1"&gt;Link to Tab 1&lt;/a&gt;
+    ...
+    &lt;div id="myTab1"&gt;This is Tab 1&lt;/div&gt;
+
+h4 Example
+.tab-wrapper
+  ul.tabs
+    li= link_to 'Tab 1', '#tab1'
+    li= link_to 'Tab 2', '#tab2'
+    li= link_to 'Tab 3', '#tab3'
+  .viewport
+    #tab1
+      p This is Tab 1
+    #tab2
+      p This is Tab 2
+    #tab3
+      p This is Tab 3
+
+
+
 
 h2 Tipsy (Tooltips and Popovers)
 p docs tba
