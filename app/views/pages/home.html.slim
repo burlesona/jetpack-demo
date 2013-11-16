@@ -2,6 +2,15 @@ header.site-title
   h1 Jetpack
   h2 A minimal, modern, modular UI framework that helps without hurting.
 
+hr
+
+p
+  = link_to('View Source on Github', 'http://github.com/burlesona/jetpack-rails')
+  br
+  | Use as you please, Jetpack is released under the <strong>MIT License</strong>.
+  br
+  = "©#{Time.now.year} Andrew Burleson"
+
 h2 Why?
 p In a world with so many existing UI frameworks, why did I bother
   creating this one?
@@ -50,13 +59,16 @@ p
 
 
 
-h3 Modules
+h3 SCSS Modules
 p
   | Jetpack is intended to be modular. All dependencies are included in the core
     module, everything else is totally independent and can be added or removed
     at any time.
 
-h4 Presets <small>required*</small>
+h4
+  => link_to 'Presets', page_path('presets')
+  small required
+
 code @import 'jetpack/presets';
 p Jetpack presets are required, BUT, the recommended approach is to copy
   and paste the presets file that ships with Jetpack into the top of your
@@ -65,12 +77,18 @@ p Jetpack presets are required, BUT, the recommended approach is to copy
   before you include the rest of jetpack, you're golden.
 
 
-h4 Core <small>required</small>
+h4
+  => link_to 'Core', page_path('core')
+  small required
+
 code @import 'jetpack/core';
 p Jetpack Core is the only required module. It includes basic utility
   mixins that the other modules rely on.
 
-h4 Resetize <small>optional</small>
+h4
+  => link_to 'Resetize', page_path('resetize')
+  small optional
+
 code @import 'jetpack/resetize';
 p Jetpack Resetize is a mashup of Normalize and Formalize, with a
   few little tweaks thrown in for good measure. To my knowledge, these
@@ -82,20 +100,29 @@ p <em>Note: this is one of only two files that include selectors
   added to your CSS for you, leave this out and include your own reset file
   or just don't bother with CSS reset. It's up to you.</em>
 
-h4 Typography <small>optional</small>
+h4
+  => link_to 'Typography', page_path('typography')
+  small optional
+
 code @import 'jetpack/typography';
 p Jetpack Typography is a remix of the Typographic styles from Twitter
   Bootstrap. Among other things, I've toned down the size of the headings
   (geez!) and increased the color contrast.
 
-h4 Fractionalize <small>optional</small>
+h4
+  => link_to 'Fractionalize', page_path('fractionalize')
+  small optional
+
 code @import 'jetpack/fractionalize';
 p Fractionalize is Jetpack's uber-badass grid system. It's not the typical
   span-something grid you're used to - instead, it's a method for dividing
   the page into fractional columns that reliably flow without any special
   markup or other shenanigans.
 
-h4 Forms <small>optional</small>
+h4
+  => link_to 'Forms', page_path('forms')
+  small optional
+
 code @import 'jetpack/forms';
 p Jetpack includes a collection of different form layout mixins. The
   base styles for form elements are mostly set in the Resetize library,
@@ -105,22 +132,34 @@ p Jetpack includes a collection of different form layout mixins. The
   but they probably will look better if you're using that (or something
   else that standardizes form element styles across browsers).
 
-h4 Tables <small>optional</small>
+h4
+  => link_to 'Tables', page_path('tables')
+  small optional
+
 code @import 'jetpack/tables';
 p Jetpack Tables are a based on a remix of the table styles in
   Twitter Bootstrap. Simple, straightforward. Use 'em if you like.
 
-h4 Interface <small>optional</small>
+h4
+  => link_to 'Interface', page_path('interface')
+  small optional
+
 code @import 'jetpack/interface';
 p Jetpack Interface is a set of helpers for common interface elements,
   like labels and buttons.
 
-h4 Navigation <small>optional</small>
+h4
+  => link_to 'Navigation', page_path('navigation')
+  small optional
+
 code @import 'jetpack/navigation';
 p Jetpack Navigation is a set of helper styles for common nav UI
   elements.
 
-h4 Selectors <small>optional</small>
+h4
+  => link_to 'Selectors', page_path('selectors')
+  small optional
+
 code @import 'jetpack/selectors';
 p Jetpack Defaults is the second file that includes selectors (the other being jetpack/resetize).
   If you'd like to have some simple stuff pre-defined for you, like <code>a.button</code>
@@ -128,15 +167,23 @@ p Jetpack Defaults is the second file that includes selectors (the other being j
   If you want to have total control over what gets included in your CSS stack, then just
   leave this out and only include the bits of Jetpack you want.
 
-h4 Javascript <small>optional</small>
+h3 JS + Rails Helpers
+
+h4
+  => link_to 'Javascript', page_path('javascript')
+  small optional
+
 code
   | //= require jetpack
 p You can add Jetpack JS to your application by requiring it in your JS manifest file.
   You'll get a few handy helpers here, including alert messages, tool tips, and modals.
-  See the source for details.
+  See the source for details. Alternatively you can pick and choose JS functions to include.
 
-h4 Helpers <small>optional</small>
-code | require Jetpack::RailsHelper
+h4
+  => link_to 'Helpers', page_path('helpers')
+  small optional
+
+code include Jetpack::RailsHelper
 p Jetpack Helpers is a set of Rails helpers that make it just a tad faster to put an app
   together. The <code>view_name</code> helper is really useful for CSS namespacing, and
   the <code>title</code> and <code>flash_messages</code> helpers are just quick timesavers

@@ -1,0 +1,69 @@
+header.page-title
+  h1
+    ' Rails Helpers
+    small Optional
+  code include Jetpack::Helper
+
+  p Jetpack comes with a couple common Rails helper methods. To use these in a Rails app,
+    just include the module in ApplicationHelper.
+
+h2 Methods
+code view_name
+p This is the most useful helper. Call the <code>view_name</code> method anywhere in your
+  views you get a space-seperated string with the controller name and action of the current view.
+  I use these as the body class attribute, which gives you a great way to namespace your CSS.
+  For instance:
+
+pre
+  # HTML
+  = '<body class="<%= view_name %>">' + "\n\n"
+
+  # SCSS
+  = 'body.posts.edit { ... }'
+
+code viewing?( string )
+p Returns true if the view_name of the current page matches the given string.
+  This is handy in common headers and footers. For instance:
+
+pre
+  = '<% if viewing? "pages home" %>' + "\n"
+  = '  <img src="big-logo.png">' + "\n"
+  = '<% end %>'
+
+code nav_link_to( text, path )
+p Creates a nav link, ie. if the link is pointing to the current page
+  it has the 'current' class and it's href is '#'.
+
+pre
+  # Template Code
+  ' nav_link_to("Home Page",home_path)
+  = "\n\n"
+  # HTML Output
+  = '<a href="#" class="curent">Home Page</a>'
+
+code flash_messages
+p Outputs standard flash messages for a Rails app.
+
+pre
+  # Example Output for flash.notice
+  = '<div class="flash-message notice" data-persist="false">Flash Message Text Here</div>'
+
+p The <code>data-persist</code> attribute is used by the Jetpack Flash Message JS to determine
+  whether a flash message should stick around until the user closes it, or fade away after 2 seconds.
+  Notice messages do not persist by default, while alert messages do.
+
+code title
+p Outputs a page title. Prefixes [DEV] on the title in the development environment.
+p I find this helpful because there have been times that I've been making changes locally, and
+  it looks like these changes aren't having any effect. Then I realize I'm looking at the live site
+  in my browser, not my local copy. Oops!
+
+pre
+  # Template Code
+  ' title 'Page Title Here'
+  = "\n\n"
+  # HTML Output
+  = '<title>Page Title Here</title>'
+
+p Note: for this to work you must have a <code>yield :title</code> set in your
+  application layout file.
